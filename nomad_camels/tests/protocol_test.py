@@ -129,8 +129,47 @@ def test_if_and_set_variables(qtbot, tmp_path):
     catalog_maker(tmp_path)
     run_test_protocol(tmp_path, prot)
 
-def test_nd_sweep():
-    pass
+def test_nd_sweep(qtbot, tmp_path):
+    ensure_demo_in_devices()
+    from nomad_camels.loop_steps import nd_sweep
+    conf = protocol_config.Protocol_Config()
+    qtbot.addWidget(conf)
+    action = get_action_from_name(conf.add_actions, 'ND Sweep')
+    action.trigger()
+    conf_widge = conf.loop_step_configuration_widget
+    assert isinstance(conf_widge,
+                      nd_sweep.ND_Sweep_Config)
+
+    read_names = ['demo_device_detectorX', 'demo_device_detectorY',
+                  'demo_device_detectorZ', 'demo_device_motorX',
+                  'demo_device_motorY', 'demo_device_motorZ']
+    table = conf_widge.read_table.tableWidget_channels
+    for name in read_names:
+        row = get_row_from_channel_table(name, table)
+        table.item(row, 0).setCheckState(Qt.CheckState.Checked)
+
+    def make_more_tabs():
+        qtbot.mouseClick(conf_widge.addSweepChannelButton,
+                         Qt.MouseButton.LeftButton)
+        qtbot.mouseClick(conf_widge.addSweepChannelButton,
+                         Qt.MouseButton.LeftButton)
+        assert len(conf_widge.tabs) == 3
+    qtbot.waitUntil(make_more_tabs)
+
+    xyz = ['X', 'Y', 'Z']
+    for i, tab in enumerate(conf_widge.tabs):
+        tab.comboBox_sweep_channel.setCurrentText(f'demo_device_motor{xyz[i]}')
+        tab.sweep_widget.lineEdit_start.setText('-10')
+        tab.sweep_widget.lineEdit_stop.setText('10')
+        tab.sweep_widget.lineEdit_n_points.setText('5')
+
+    with qtbot.waitSignal(conf.accepted) as blocker:
+        conf.accept()
+    prot = conf.protocol
+    prot.name = 'test_nd_sweep_protocol'
+    assert 'ND Sweep (ND_Sweep)' in prot.loop_step_dict
+    catalog_maker(tmp_path)
+    run_test_protocol(tmp_path, prot)
 
 def test_read_channels(qtbot, tmp_path):
     ensure_demo_in_devices()
