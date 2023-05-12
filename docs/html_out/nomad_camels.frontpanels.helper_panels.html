@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nomad_camels.frontpanels.helper_panels package &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NOMAD-CAMELS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">nomad_camels.frontpanels.helper_panels package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-nomad_camels.frontpanels.helper_panels.button_move_scroll_area">nomad_camels.frontpanels.helper_panels.button_move_scroll_area module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.get_key"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict.get_key()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.get_value"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict.get_value()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.items"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict.items()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.keys"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict.keys()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.pop"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict.pop()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.values"><code class="docutils literal notranslate"><span class="pre">BidirectionalDict.values()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton"><code class="docutils literal notranslate"><span class="pre">DragButton</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">DragButton.mouseMoveEvent()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">DragButton.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea"><code class="docutils literal notranslate"><span class="pre">DropArea</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.dragEnterEvent"><code class="docutils literal notranslate"><span class="pre">DropArea.dragEnterEvent()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.dropEvent"><code class="docutils literal notranslate"><span class="pre">DropArea.dropEvent()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.get_drop_position"><code class="docutils literal notranslate"><span class="pre">DropArea.get_drop_position()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.order_changed"><code class="docutils literal notranslate"><span class="pre">DropArea.order_changed</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">DropArea.staticMetaObject</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.updateLayout"><code class="docutils literal notranslate"><span class="pre">DropArea.updateLayout()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.add_button"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.add_button()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.disable_run_buttons"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.disable_run_buttons()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.disable_single_run"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.disable_single_run()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.enable_run_buttons"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.enable_run_buttons()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.enable_single_run"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.enable_single_run()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.get_button_order"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.get_button_order()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.order_changed"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.order_changed</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.remove_button"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.remove_button()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.rename_button"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.rename_button()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.resizeEvent"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.resizeEvent()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.staticMetaObject</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.updateLayout"><code class="docutils literal notranslate"><span class="pre">Drop_Scroll_Area.updateLayout()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.frontpanels.helper_panels.enterTextDialog">nomad_camels.frontpanels.helper_panels.enterTextDialog module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog"><code class="docutils literal notranslate"><span class="pre">EnterTextDialog</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog.accept"><code class="docutils literal notranslate"><span class="pre">EnterTextDialog.accept()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">EnterTextDialog.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.frontpanels.helper_panels.pass_ask">nomad_camels.frontpanels.helper_panels.pass_ask module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.pass_ask.Pass_Ask"><code class="docutils literal notranslate"><span class="pre">Pass_Ask</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.frontpanels.helper_panels.pass_ask.Pass_Ask.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Pass_Ask.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.frontpanels.helper_panels">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">nomad_camels.frontpanels.helper_panels package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/nomad_camels.frontpanels.helper_panels.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nomad-camels-frontpanels-helper-panels-package">
+<h1>nomad_camels.frontpanels.helper_panels package<a class="headerlink" href="#nomad-camels-frontpanels-helper-panels-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-nomad_camels.frontpanels.helper_panels.button_move_scroll_area">
+<span id="nomad-camels-frontpanels-helper-panels-button-move-scroll-area-module"></span><h2>nomad_camels.frontpanels.helper_panels.button_move_scroll_area module<a class="headerlink" href="#module-nomad_camels.frontpanels.helper_panels.button_move_scroll_area" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.frontpanels.helper_panels.button_move_scroll_area.</span></span><span class="sig-name descname"><span class="pre">BidirectionalDict</span></span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.get_key">
+<span class="sig-name descname"><span class="pre">get_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.get_key" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.get_value">
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.get_value" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.items" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.keys" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.pop" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.BidirectionalDict.values" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.frontpanels.helper_panels.button_move_scroll_area.</span></span><span class="sig-name descname"><span class="pre">DragButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QPushButton</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton.mouseMoveEvent">
+<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton.mouseMoveEvent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;DragButton&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QPushButton&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DragButton.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.frontpanels.helper_panels.button_move_scroll_area.</span></span><span class="sig-name descname"><span class="pre">DropArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_wdith</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.dragEnterEvent">
+<span class="sig-name descname"><span class="pre">dragEnterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.dragEnterEvent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.dropEvent">
+<span class="sig-name descname"><span class="pre">dropEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.dropEvent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.get_drop_position">
+<span class="sig-name descname"><span class="pre">get_drop_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.get_drop_position" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pos</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.order_changed">
+<span class="sig-name descname"><span class="pre">order_changed</span></span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.order_changed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;DropArea&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#34</span> <span class="pre">type=Signal,</span> <span class="pre">signature=order_changed(QVariantList),</span> <span class="pre">parameters=QVariantList</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.updateLayout">
+<span class="sig-name descname"><span class="pre">updateLayout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.DropArea.updateLayout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.frontpanels.helper_panels.button_move_scroll_area.</span></span><span class="sig-name descname"><span class="pre">Drop_Scroll_Area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QScrollArea</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.add_button">
+<span class="sig-name descname"><span class="pre">add_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.add_button" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>button</strong> – </p></li>
+<li><p><strong>name</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.disable_run_buttons">
+<span class="sig-name descname"><span class="pre">disable_run_buttons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.disable_run_buttons" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.disable_single_run">
+<span class="sig-name descname"><span class="pre">disable_single_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.disable_single_run" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.enable_run_buttons">
+<span class="sig-name descname"><span class="pre">enable_run_buttons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.enable_run_buttons" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.enable_single_run">
+<span class="sig-name descname"><span class="pre">enable_single_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.enable_single_run" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.get_button_order">
+<span class="sig-name descname"><span class="pre">get_button_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.get_button_order" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.order_changed">
+<span class="sig-name descname"><span class="pre">order_changed</span></span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.order_changed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.remove_button">
+<span class="sig-name descname"><span class="pre">remove_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.remove_button" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.rename_button">
+<span class="sig-name descname"><span class="pre">rename_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.rename_button" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old_name</strong> – </p></li>
+<li><p><strong>new_name</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.resizeEvent">
+<span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.resizeEvent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a0</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Drop_Scroll_Area&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QScrollArea&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#37</span> <span class="pre">type=Signal,</span> <span class="pre">signature=order_changed(QVariantList),</span> <span class="pre">parameters=QVariantList</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.updateLayout">
+<span class="sig-name descname"><span class="pre">updateLayout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.button_move_scroll_area.Drop_Scroll_Area.updateLayout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.frontpanels.helper_panels.enterTextDialog">
+<span id="nomad-camels-frontpanels-helper-panels-entertextdialog-module"></span><h2>nomad_camels.frontpanels.helper_panels.enterTextDialog module<a class="headerlink" href="#module-nomad_camels.frontpanels.helper_panels.enterTextDialog" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.frontpanels.helper_panels.enterTextDialog.</span></span><span class="sig-name descname"><span class="pre">EnterTextDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="nomad_camels.gui.html#nomad_camels.gui.enterTextDialog.Ui_EnterTextDialog" title="nomad_camels.gui.enterTextDialog.Ui_EnterTextDialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ui_EnterTextDialog</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog.accept" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;EnterTextDialog&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QDialog&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.enterTextDialog.EnterTextDialog.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.frontpanels.helper_panels.pass_ask">
+<span id="nomad-camels-frontpanels-helper-panels-pass-ask-module"></span><h2>nomad_camels.frontpanels.helper_panels.pass_ask module<a class="headerlink" href="#module-nomad_camels.frontpanels.helper_panels.pass_ask" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.pass_ask.Pass_Ask">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.frontpanels.helper_panels.pass_ask.</span></span><span class="sig-name descname"><span class="pre">Pass_Ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.pass_ask.Pass_Ask" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="nomad_camels.gui.html#nomad_camels.gui.pass_ask.Ui_Pass_Ask" title="nomad_camels.gui.pass_ask.Ui_Pass_Ask"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ui_Pass_Ask</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.frontpanels.helper_panels.pass_ask.Pass_Ask.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Pass_Ask&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QDialog&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.frontpanels.helper_panels.pass_ask.Pass_Ask.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.frontpanels.helper_panels">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-nomad_camels.frontpanels.helper_panels" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

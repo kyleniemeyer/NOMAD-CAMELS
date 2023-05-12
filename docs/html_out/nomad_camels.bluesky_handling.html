@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nomad_camels.bluesky_handling package &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NOMAD-CAMELS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">nomad_camels.bluesky_handling package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.EpicsFieldSignal">nomad_camels.bluesky_handling.EpicsFieldSignal module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.get"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.get()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.just_readback"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.just_readback()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.put"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.put()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.subscriptions"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.subscriptions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignalRO</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.put"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignalRO.put()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.subscriptions"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignalRO.subscriptions</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.TriggerEpicsSignalRO">nomad_camels.bluesky_handling.TriggerEpicsSignalRO module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.callback_method"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO.callback_method()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.subscriptions"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO.subscriptions</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.trigger"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO.trigger()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.builder_helper_functions">nomad_camels.bluesky_handling.builder_helper_functions module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.builder_helper_functions.get_plot_add_string"><code class="docutils literal notranslate"><span class="pre">get_plot_add_string()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.builder_helper_functions.plot_creator"><code class="docutils literal notranslate"><span class="pre">plot_creator()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.custom_function_signal">nomad_camels.bluesky_handling.custom_function_signal module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.describe"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.describe()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.get"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.get()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.put"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.put()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.subscriptions"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.subscriptions</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.trigger"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.trigger()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.describe"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.describe()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.get"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.get()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.subscriptions"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.subscriptions</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.trigger"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.trigger()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.evaluation_helper">nomad_camels.bluesky_handling.evaluation_helper module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator"><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval"><code class="docutils literal notranslate"><span class="pre">Evaluator.eval()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval_string"><code class="docutils literal notranslate"><span class="pre">Evaluator.eval_string()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.event"><code class="docutils literal notranslate"><span class="pre">Evaluator.event()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.is_to_date"><code class="docutils literal notranslate"><span class="pre">Evaluator.is_to_date()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.helper_functions">nomad_camels.bluesky_handling.helper_functions module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper"><code class="docutils literal notranslate"><span class="pre">BoxHelper</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper.executor"><code class="docutils literal notranslate"><span class="pre">BoxHelper.executor</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">BoxHelper.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box"><code class="docutils literal notranslate"><span class="pre">Prompt_Box</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.set_done"><code class="docutils literal notranslate"><span class="pre">Prompt_Box.set_done()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.start_execution"><code class="docutils literal notranslate"><span class="pre">Prompt_Box.start_execution()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Prompt_Box.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box"><code class="docutils literal notranslate"><span class="pre">Value_Box</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.accept"><code class="docutils literal notranslate"><span class="pre">Value_Box.accept()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.reject"><code class="docutils literal notranslate"><span class="pre">Value_Box.reject()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.start_execution"><code class="docutils literal notranslate"><span class="pre">Value_Box.start_execution()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Value_Box.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.clear_plots"><code class="docutils literal notranslate"><span class="pre">clear_plots()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_channels"><code class="docutils literal notranslate"><span class="pre">get_channels()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_fit_results"><code class="docutils literal notranslate"><span class="pre">get_fit_results()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_inner_range"><code class="docutils literal notranslate"><span class="pre">get_inner_range()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_range"><code class="docutils literal notranslate"><span class="pre">get_range()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.gradient_descent"><code class="docutils literal notranslate"><span class="pre">gradient_descent()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.read_wo_trigger"><code class="docutils literal notranslate"><span class="pre">read_wo_trigger()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.simplify_configs_dict"><code class="docutils literal notranslate"><span class="pre">simplify_configs_dict()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.trigger_multi"><code class="docutils literal notranslate"><span class="pre">trigger_multi()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.make_catalog">nomad_camels.bluesky_handling.make_catalog module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.make_catalog.make_yml"><code class="docutils literal notranslate"><span class="pre">make_yml()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.protocol_builder">nomad_camels.bluesky_handling.protocol_builder module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.protocol_builder.build_protocol"><code class="docutils literal notranslate"><span class="pre">build_protocol()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.protocol_builder.user_sample_string"><code class="docutils literal notranslate"><span class="pre">user_sample_string()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.special_plan_stubs">nomad_camels.bluesky_handling.special_plan_stubs module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.special_plan_stubs.trigger_and_read_devices"><code class="docutils literal notranslate"><span class="pre">trigger_and_read_devices()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.visa_signal">nomad_camels.bluesky_handling.visa_signal module</a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device"><code class="docutils literal notranslate"><span class="pre">VISA_Device</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device.component_names"><code class="docutils literal notranslate"><span class="pre">VISA_Device.component_names</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device.subscriptions"><code class="docutils literal notranslate"><span class="pre">VISA_Device.subscriptions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.describe"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read.describe()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.get"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read.get()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.subscriptions"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read.subscriptions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write</span></code></a><ul>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.change_instrument"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.change_instrument()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.describe"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.describe()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.put"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.put()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.subscriptions"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.subscriptions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.close_resources"><code class="docutils literal notranslate"><span class="pre">close_resources()</span></code></a></li>
+<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.list_resources"><code class="docutils literal notranslate"><span class="pre">list_resources()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">nomad_camels.bluesky_handling package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/nomad_camels.bluesky_handling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nomad-camels-bluesky-handling-package">
+<h1>nomad_camels.bluesky_handling package<a class="headerlink" href="#nomad-camels-bluesky-handling-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-nomad_camels.bluesky_handling.EpicsFieldSignal">
+<span id="nomad-camels-bluesky-handling-epicsfieldsignal-module"></span><h2>nomad_camels.bluesky_handling.EpicsFieldSignal module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.EpicsFieldSignal" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.EpicsFieldSignal.</span></span><span class="sig-name descname"><span class="pre">EpicsFieldSignal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_pv_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinted'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversion_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_conversion_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">putFunc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></p>
+<p>A Signal used to adress a single field of an EPICS PV.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.get" title="Permalink to this definition"></a></dt>
+<dd><p>Reads the Signals value. If there is a <cite>conversion_function</cite>,
+the value is transformed by it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.just_readback">
+<span class="sig-name descname"><span class="pre">just_readback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.just_readback" title="Permalink to this definition"></a></dt>
+<dd><p>Only returns the currently stored readback-value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.put" title="Permalink to this definition"></a></dt>
+<dd><p>Puts the Signals value. If there is a <cite>set_conversion_function</cite>,
+the value is transformed by it. Also calls <cite>self.putFunc</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – </p></li>
+<li><p><strong>*</strong> – </p></li>
+<li><p><strong>timestamp</strong> – (Default value = None)</p></li>
+<li><p><strong>force</strong> – (Default value = False)</p></li>
+<li><p><strong>metadata</strong> – (Default value = None)</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.EpicsFieldSignal.</span></span><span class="sig-name descname"><span class="pre">EpicsFieldSignalRO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_pv_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinted'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversion_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_conversion_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">putFunc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal" title="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal"><code class="xref py py-class docutils literal notranslate"><span class="pre">EpicsFieldSignal</span></code></a></p>
+<p>The read-only implementation of EpicsFieldSignal. The only
+difference is that it raises an error, when one tries to put a value.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.put" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – </p></li>
+<li><p><strong>*</strong> – </p></li>
+<li><p><strong>timestamp</strong> – (Default value = None)</p></li>
+<li><p><strong>force</strong> – (Default value = False)</p></li>
+<li><p><strong>metadata</strong> – (Default value = None)</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.TriggerEpicsSignalRO">
+<span id="nomad-camels-bluesky-handling-triggerepicssignalro-module"></span><h2>nomad_camels.bluesky_handling.TriggerEpicsSignalRO module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.TriggerEpicsSignalRO" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.TriggerEpicsSignalRO.</span></span><span class="sig-name descname"><span class="pre">TriggerEpicsSignalRO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_pv</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_mdel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EpicsSignalRO</span></code></p>
+<p>Subclass that implements a simple ‘timed’ reading when called via
+bluesky’s ‘trigger_and_read’.
+Note that each PV that shall be read via this class also needs a
+second PV with the same name+:trig. That PV should provide a FLNK to
+the original PV.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.callback_method">
+<span class="sig-name descname"><span class="pre">callback_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.callback_method" title="Permalink to this definition"></a></dt>
+<dd><p>If there is a status object from the trigger-method, it will
+be set to finished.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.trigger">
+<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.trigger" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a status object that will be set to finished, when
+the PV-value is updated. Sets the trigger-PV to 1, thus
+triggering the process of the original PV.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.builder_helper_functions">
+<span id="nomad-camels-bluesky-handling-builder-helper-functions-module"></span><h2>nomad_camels.bluesky_handling.builder_helper_functions module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.builder_helper_functions" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.builder_helper_functions.get_plot_add_string">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.builder_helper_functions.</span></span><span class="sig-name descname"><span class="pre">get_plot_add_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subprotocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.builder_helper_functions.get_plot_add_string" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – </p></li>
+<li><p><strong>stream</strong> – </p></li>
+<li><p><strong>subprotocol</strong> – (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.builder_helper_functions.plot_creator">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.builder_helper_functions.</span></span><span class="sig-name descname"><span class="pre">plot_creator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'create_plots'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.builder_helper_functions.plot_creator" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plot_data</strong> – </p></li>
+<li><p><strong>func_name</strong> – (Default value = ‘create_plots’)</p></li>
+<li><p><strong>multi_stream</strong> – (Default value = False)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.custom_function_signal">
+<span id="nomad-camels-bluesky-handling-custom-function-signal-module"></span><h2>nomad_camels.bluesky_handling.custom_function_signal module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.custom_function_signal" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.custom_function_signal.</span></span><span class="sig-name descname"><span class="pre">Custom_Function_Signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinted'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">put_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.describe">
+<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.describe" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.put" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – </p></li>
+<li><p><strong>*</strong> – </p></li>
+<li><p><strong>timestamp</strong> – (Default value = None)</p></li>
+<li><p><strong>force</strong> – (Default value = False)</p></li>
+<li><p><strong>metadata</strong> – (Default value = None)</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.trigger">
+<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.trigger" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.custom_function_signal.</span></span><span class="sig-name descname"><span class="pre">Custom_Function_SignalRO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinted'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalRO</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.describe">
+<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.describe" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.trigger">
+<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.trigger" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.evaluation_helper">
+<span id="nomad-camels-bluesky-handling-evaluation-helper-module"></span><h2>nomad_camels.bluesky_handling.evaluation_helper module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.evaluation_helper" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.evaluation_helper.Evaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.evaluation_helper.</span></span><span class="sig-name descname"><span class="pre">Evaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackBase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval">
+<span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eval_str</strong> (<em>str :</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval_string">
+<span class="sig-name descname"><span class="pre">eval_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval_string" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eval_str</strong> (<em>str :</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.evaluation_helper.Evaluator.event">
+<span class="sig-name descname"><span class="pre">event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.event" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>doc</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.evaluation_helper.Evaluator.is_to_date">
+<span class="sig-name descname"><span class="pre">is_to_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.is_to_date" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.helper_functions">
+<span id="nomad-camels-bluesky-handling-helper-functions-module"></span><h2>nomad_camels.bluesky_handling.helper_functions module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.helper_functions" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.BoxHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">BoxHelper</span></span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.BoxHelper.executor">
+<span class="sig-name descname"><span class="pre">executor</span></span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper.executor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.BoxHelper.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;BoxHelper&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#34</span> <span class="pre">type=Signal,</span> <span class="pre">signature=executor()</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Prompt_Box">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">Prompt_Box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMessageBox</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Prompt_Box.set_done">
+<span class="sig-name descname"><span class="pre">set_done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.set_done" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Prompt_Box.start_execution">
+<span class="sig-name descname"><span class="pre">start_execution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.start_execution" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Prompt_Box.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Prompt_Box&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QMessageBox&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Value_Box">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">Value_Box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">devs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Value_Box.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.accept" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Value_Box.reject">
+<span class="sig-name descname"><span class="pre">reject</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.reject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Value_Box.start_execution">
+<span class="sig-name descname"><span class="pre">start_execution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.start_execution" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.Value_Box.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Value_Box&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QDialog&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.clear_plots">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">clear_plots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plots</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'primary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.clear_plots" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plots</strong> – </p></li>
+<li><p><strong>stream</strong> – (Default value = ‘primary’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.get_channels">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">get_channels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dev</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.get_channels" title="Permalink to this definition"></a></dt>
+<dd><p>returns the components of an ophyd-device that are not listed in
+the configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dev</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.get_fit_results">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">get_fit_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yielding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'primary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.get_fit_results" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fits</strong> – </p></li>
+<li><p><strong>namespace</strong> – </p></li>
+<li><p><strong>yielding</strong> – (Default value = False)</p></li>
+<li><p><strong>stream</strong> – (Default value = ‘primary’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.get_inner_range">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">get_inner_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sweep_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.get_inner_range" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – </p></li>
+<li><p><strong>stop</strong> – </p></li>
+<li><p><strong>points</strong> – </p></li>
+<li><p><strong>sweep_mode</strong> – </p></li>
+<li><p><strong>endpoint</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.get_range">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loop_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'start</span> <span class="pre">-</span> <span class="pre">stop'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sweep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.get_range" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>evaluator</strong> – </p></li>
+<li><p><strong>start</strong> – </p></li>
+<li><p><strong>stop</strong> – </p></li>
+<li><p><strong>points</strong> – </p></li>
+<li><p><strong>min_val</strong> – (Default value = np.nan)</p></li>
+<li><p><strong>max_val</strong> – (Default value = np.nan)</p></li>
+<li><p><strong>loop_type</strong> – (Default value = ‘start - stop’)</p></li>
+<li><p><strong>sweep_mode</strong> – (Default value = ‘linear’)</p></li>
+<li><p><strong>endpoint</strong> – (Default value = True)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.gradient_descent">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">gradient_descent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gradient_descent'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_step_for_diff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.gradient_descent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_iterations</strong> – </p></li>
+<li><p><strong>threshold</strong> – </p></li>
+<li><p><strong>w_init</strong> – </p></li>
+<li><p><strong>func_text</strong> – </p></li>
+<li><p><strong>evaluator</strong> – </p></li>
+<li><p><strong>set_channel</strong> – </p></li>
+<li><p><strong>read_channels</strong> – </p></li>
+<li><p><strong>min_step</strong> – </p></li>
+<li><p><strong>max_step</strong> – </p></li>
+<li><p><strong>min_val</strong> – </p></li>
+<li><p><strong>max_val</strong> – </p></li>
+<li><p><strong>stream_name</strong> – (Default value = ‘gradient_descent’)</p></li>
+<li><p><strong>learning_rate</strong> – (Default value = 0.05)</p></li>
+<li><p><strong>momentum</strong> – (Default value = 0.8)</p></li>
+<li><p><strong>max_step_for_diff</strong> – (Default value = None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.read_wo_trigger">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">read_wo_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'primary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.read_wo_trigger" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>devices</strong> – </p></li>
+<li><p><strong>grp</strong> – (Default value = None)</p></li>
+<li><p><strong>stream</strong> – (Default value = ‘primary’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.simplify_configs_dict">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">simplify_configs_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.simplify_configs_dict" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>configs</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.helper_functions.trigger_multi">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.helper_functions.</span></span><span class="sig-name descname"><span class="pre">trigger_multi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.helper_functions.trigger_multi" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>devices</strong> – </p></li>
+<li><p><strong>grp</strong> – (Default value = None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.make_catalog">
+<span id="nomad-camels-bluesky-handling-make-catalog-module"></span><h2>nomad_camels.bluesky_handling.make_catalog module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.make_catalog" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.make_catalog.make_yml">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.make_catalog.</span></span><span class="sig-name descname"><span class="pre">make_yml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datapath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">catalog_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CAMELS_CATALOG'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.make_catalog.make_yml" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datapath</strong> – </p></li>
+<li><p><strong>catalog_name</strong> – (Default value = ‘CAMELS_CATALOG’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.protocol_builder">
+<span id="nomad-camels-bluesky-handling-protocol-builder-module"></span><h2>nomad_camels.bluesky_handling.protocol_builder module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.protocol_builder" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.protocol_builder.build_protocol">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.protocol_builder.</span></span><span class="sig-name descname"><span class="pre">build_protocol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.h5'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">catalog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CAMELS_CATALOG'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">userdata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampledata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.protocol_builder.build_protocol" title="Permalink to this definition"></a></dt>
+<dd><p>Creating the python file from a given <cite>protocol</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocol</strong> – </p></li>
+<li><p><strong>file_path</strong> – </p></li>
+<li><p><strong>save_path</strong> – (Default value = ‘test.h5’)</p></li>
+<li><p><strong>catalog</strong> – (Default value = ‘CAMELS_CATALOG’)</p></li>
+<li><p><strong>userdata</strong> – (Default value = None)</p></li>
+<li><p><strong>sampledata</strong> – (Default value = None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.protocol_builder.user_sample_string">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.protocol_builder.</span></span><span class="sig-name descname"><span class="pre">user_sample_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampledata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.protocol_builder.user_sample_string" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the string adding userdata and sampledata to the md.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userdata</strong> – </p></li>
+<li><p><strong>sampledata</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.special_plan_stubs">
+<span id="nomad-camels-bluesky-handling-special-plan-stubs-module"></span><h2>nomad_camels.bluesky_handling.special_plan_stubs module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.special_plan_stubs" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.special_plan_stubs.trigger_and_read_devices">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.special_plan_stubs.</span></span><span class="sig-name descname"><span class="pre">trigger_and_read_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'primary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.special_plan_stubs.trigger_and_read_devices" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for the plan stup <cite>trigger_and_read</cite> that implements
+trigger/read for a device with several components by simply splitting
+up the device and using a list of its components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>devices</strong> – </p></li>
+<li><p><strong>name</strong> – (Default value = ‘primary’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling.visa_signal">
+<span id="nomad-camels-bluesky-handling-visa-signal-module"></span><h2>nomad_camels.bluesky_handling.visa_signal module<a class="headerlink" href="#module-nomad_camels.bluesky_handling.visa_signal" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Device">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.visa_signal.</span></span><span class="sig-name descname"><span class="pre">VISA_Device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_termination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\r\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_termination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\r\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baud_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9600</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Device.component_names">
+<span class="sig-name descname"><span class="pre">component_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device.component_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Device.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'acq_done'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.visa_signal.</span></span><span class="sig-name descname"><span class="pre">VISA_Signal_Read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinted'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_termination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_termination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baud_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_return</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_read_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalRO</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.describe">
+<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.describe" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.visa_signal.</span></span><span class="sig-name descname"><span class="pre">VISA_Signal_Write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinted'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_termination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baud_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_put_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">put_conv_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">put_format_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.change_instrument">
+<span class="sig-name descname"><span class="pre">change_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.change_instrument" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>resource_name</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.describe">
+<span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.describe" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.put" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – </p></li>
+<li><p><strong>*</strong> – </p></li>
+<li><p><strong>timestamp</strong> – (Default value = None)</p></li>
+<li><p><strong>force</strong> – (Default value = False)</p></li>
+<li><p><strong>metadata</strong> – (Default value = None)</p></li>
+<li><p><strong>**kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">FrozenSet</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'meta',</span> <span class="pre">'value'})</span></em><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.subscriptions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.close_resources">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.visa_signal.</span></span><span class="sig-name descname"><span class="pre">close_resources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.close_resources" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nomad_camels.bluesky_handling.visa_signal.list_resources">
+<span class="sig-prename descclassname"><span class="pre">nomad_camels.bluesky_handling.visa_signal.</span></span><span class="sig-name descname"><span class="pre">list_resources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nomad_camels.bluesky_handling.visa_signal.list_resources" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-nomad_camels.bluesky_handling">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-nomad_camels.bluesky_handling" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
