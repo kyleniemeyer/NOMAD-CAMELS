@@ -7,6 +7,7 @@
   <title>nomad_camels.gui package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,6 +30,7 @@
           
           <a href="index.html" class="icon icon-home">
             NOMAD-CAMELS
+              <img src="_static/camels_horizontal.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,159 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">nomad_camels.gui package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.addDeviceDialog">nomad_camels.gui.addDeviceDialog module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.addDeviceDialog.Ui_Dialog_Add_Device"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Add_Device</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.addDeviceDialog.Ui_Dialog_Add_Device.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Add_Device.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.addDeviceDialog.Ui_Dialog_Add_Device.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Dialog_Add_Device.setupUi()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.device_installer">nomad_camels.gui.device_installer module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.device_installer.Ui_Form"><code class="docutils literal notranslate"><span class="pre">Ui_Form</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.device_installer.Ui_Form.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Form.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.device_installer.Ui_Form.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Form.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.enterTextDialog">nomad_camels.gui.enterTextDialog module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.enterTextDialog.Ui_EnterTextDialog"><code class="docutils literal notranslate"><span class="pre">Ui_EnterTextDialog</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.enterTextDialog.Ui_EnterTextDialog.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_EnterTextDialog.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.enterTextDialog.Ui_EnterTextDialog.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_EnterTextDialog.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.fit_definer">nomad_camels.gui.fit_definer module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.fit_definer.Ui_Fit_Definer"><code class="docutils literal notranslate"><span class="pre">Ui_Fit_Definer</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.fit_definer.Ui_Fit_Definer.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Fit_Definer.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.fit_definer.Ui_Fit_Definer.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Fit_Definer.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.for_loop">nomad_camels.gui.for_loop module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.for_loop.Ui_for_loop_config"><code class="docutils literal notranslate"><span class="pre">Ui_for_loop_config</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.for_loop.Ui_for_loop_config.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_for_loop_config.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.for_loop.Ui_for_loop_config.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_for_loop_config.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.general_protocol_settings">nomad_camels.gui.general_protocol_settings module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.general_protocol_settings.Ui_Protocol_Settings"><code class="docutils literal notranslate"><span class="pre">Ui_Protocol_Settings</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.general_protocol_settings.Ui_Protocol_Settings.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Protocol_Settings.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.general_protocol_settings.Ui_Protocol_Settings.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Protocol_Settings.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.gradient_descent_step">nomad_camels.gui.gradient_descent_step module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.gradient_descent_step.Ui_Grad_Desc"><code class="docutils literal notranslate"><span class="pre">Ui_Grad_Desc</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.gradient_descent_step.Ui_Grad_Desc.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Grad_Desc.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.gradient_descent_step.Ui_Grad_Desc.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Grad_Desc.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.instrument_config">nomad_camels.gui.instrument_config module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.instrument_config.Ui_Form"><code class="docutils literal notranslate"><span class="pre">Ui_Form</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.instrument_config.Ui_Form.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Form.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.instrument_config.Ui_Form.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Form.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.mainWindow">nomad_camels.gui.mainWindow module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.mainWindow.Ui_MainWindow"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.mainWindow.Ui_MainWindow.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.mainWindow.Ui_MainWindow.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.mainWindow_v2">nomad_camels.gui.mainWindow_v2 module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.mainWindow_v2.Ui_MainWindow"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.mainWindow_v2.Ui_MainWindow.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.mainWindow_v2.Ui_MainWindow.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_MainWindow.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.pass_ask">nomad_camels.gui.pass_ask module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.pass_ask.Ui_Pass_Ask"><code class="docutils literal notranslate"><span class="pre">Ui_Pass_Ask</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.pass_ask.Ui_Pass_Ask.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Pass_Ask.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.pass_ask.Ui_Pass_Ask.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Pass_Ask.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.plot_definer">nomad_camels.gui.plot_definer module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_definer.Ui_Plot_Definer"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Definer</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_definer.Ui_Plot_Definer.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Definer.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_definer.Ui_Plot_Definer.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Definer.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.plot_definer_2d">nomad_camels.gui.plot_definer_2d module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_definer_2d.Ui_Plot_Definer_2D"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Definer_2D</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_definer_2d.Ui_Plot_Definer_2D.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Definer_2D.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_definer_2d.Ui_Plot_Definer_2D.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Definer_2D.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.plot_options">nomad_camels.gui.plot_options module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_options.Ui_Plot_Options"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Options</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_options.Ui_Plot_Options.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Options.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.plot_options.Ui_Plot_Options.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Plot_Options.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.protocol_view">nomad_camels.gui.protocol_view module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.protocol_view.Ui_Protocol_View"><code class="docutils literal notranslate"><span class="pre">Ui_Protocol_View</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.protocol_view.Ui_Protocol_View.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Protocol_View.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.protocol_view.Ui_Protocol_View.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Protocol_View.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.read_channels">nomad_camels.gui.read_channels module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.read_channels.Ui_read_channels_config"><code class="docutils literal notranslate"><span class="pre">Ui_read_channels_config</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.read_channels.Ui_read_channels_config.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_read_channels_config.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.read_channels.Ui_read_channels_config.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_read_channels_config.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.set_channels">nomad_camels.gui.set_channels module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.set_channels.Ui_Form"><code class="docutils literal notranslate"><span class="pre">Ui_Form</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.set_channels.Ui_Form.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_Form.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.set_channels.Ui_Form.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_Form.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui.settings_window">nomad_camels.gui.settings_window module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.settings_window.Ui_settings_window"><code class="docutils literal notranslate"><span class="pre">Ui_settings_window</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.gui.settings_window.Ui_settings_window.retranslateUi"><code class="docutils literal notranslate"><span class="pre">Ui_settings_window.retranslateUi()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.gui.settings_window.Ui_settings_window.setupUi"><code class="docutils literal notranslate"><span class="pre">Ui_settings_window.setupUi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.gui">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

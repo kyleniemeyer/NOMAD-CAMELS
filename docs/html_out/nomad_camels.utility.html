@@ -7,6 +7,7 @@
   <title>nomad_camels.utility package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,6 +30,7 @@
           
           <a href="index.html" class="icon icon-home">
             NOMAD-CAMELS
+              <img src="_static/camels_horizontal.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,163 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">nomad_camels.utility package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.databroker_export">nomad_camels.utility.databroker_export module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.broker_to_NX"><code class="docutils literal notranslate"><span class="pre">broker_to_NX()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.broker_to_dict"><code class="docutils literal notranslate"><span class="pre">broker_to_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.broker_to_hdf5"><code class="docutils literal notranslate"><span class="pre">broker_to_hdf5()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.get_param_dict"><code class="docutils literal notranslate"><span class="pre">get_param_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.recourse_entry_dict"><code class="docutils literal notranslate"><span class="pre">recourse_entry_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.sort_by_list"><code class="docutils literal notranslate"><span class="pre">sort_by_list()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.databroker_export.timestamp_to_ISO8601"><code class="docutils literal notranslate"><span class="pre">timestamp_to_ISO8601()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.device_handling">nomad_camels.utility.device_handling module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.close_devices"><code class="docutils literal notranslate"><span class="pre">close_devices()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.connection_check"><code class="docutils literal notranslate"><span class="pre">connection_check()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.get_channel_from_string"><code class="docutils literal notranslate"><span class="pre">get_channel_from_string()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.get_channels_from_string_list"><code class="docutils literal notranslate"><span class="pre">get_channels_from_string_list()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.instantiate_devices"><code class="docutils literal notranslate"><span class="pre">instantiate_devices()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.load_local_packages"><code class="docutils literal notranslate"><span class="pre">load_local_packages()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.device_handling.start_devices_from_channel_list"><code class="docutils literal notranslate"><span class="pre">start_devices_from_channel_list()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.exception_hook">nomad_camels.utility.exception_hook module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.exception_hook.ErrorMessage"><code class="docutils literal notranslate"><span class="pre">ErrorMessage</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.exception_hook.ErrorMessage.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.utility.exception_hook.exception_hook"><code class="docutils literal notranslate"><span class="pre">exception_hook()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.fit_variable_renaming">nomad_camels.utility.fit_variable_renaming module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.fit_variable_renaming.replace_name"><code class="docutils literal notranslate"><span class="pre">replace_name()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.load_save_functions">nomad_camels.utility.load_save_functions module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.autosave_preset"><code class="docutils literal notranslate"><span class="pre">autosave_preset()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.get_most_recent_presets"><code class="docutils literal notranslate"><span class="pre">get_most_recent_presets()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.get_preferences"><code class="docutils literal notranslate"><span class="pre">get_preferences()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.get_preset_list"><code class="docutils literal notranslate"><span class="pre">get_preset_list()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.get_save_str"><code class="docutils literal notranslate"><span class="pre">get_save_str()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.load_devices_dict"><code class="docutils literal notranslate"><span class="pre">load_devices_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.load_protocol"><code class="docutils literal notranslate"><span class="pre">load_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.load_protocols_dict"><code class="docutils literal notranslate"><span class="pre">load_protocols_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.load_save_dict"><code class="docutils literal notranslate"><span class="pre">load_save_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.make_backup"><code class="docutils literal notranslate"><span class="pre">make_backup()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.make_save_dict"><code class="docutils literal notranslate"><span class="pre">make_save_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.save_dictionary"><code class="docutils literal notranslate"><span class="pre">save_dictionary()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.save_preferences"><code class="docutils literal notranslate"><span class="pre">save_preferences()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_functions.save_preset"><code class="docutils literal notranslate"><span class="pre">save_preset()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.load_save_helper_functions">nomad_camels.utility.load_save_helper_functions module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.load_save_helper_functions.load_plots"><code class="docutils literal notranslate"><span class="pre">load_plots()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.number_formatting">nomad_camels.utility.number_formatting module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.number_formatting.format_number"><code class="docutils literal notranslate"><span class="pre">format_number()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.plot_placement">nomad_camels.utility.plot_placement module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.plot_placement.place_widget"><code class="docutils literal notranslate"><span class="pre">place_widget()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.qthreads">nomad_camels.utility.qthreads module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Make_Ioc"><code class="docutils literal notranslate"><span class="pre">Make_Ioc</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Make_Ioc.info_step"><code class="docutils literal notranslate"><span class="pre">Make_Ioc.info_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Make_Ioc.run"><code class="docutils literal notranslate"><span class="pre">Make_Ioc.run()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Make_Ioc.sig_step"><code class="docutils literal notranslate"><span class="pre">Make_Ioc.sig_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Make_Ioc.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Make_Ioc.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Manual_Device_Thread"><code class="docutils literal notranslate"><span class="pre">Manual_Device_Thread</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Manual_Device_Thread.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Manual_Device_Thread.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Manual_Device_Thread.update_config_settings"><code class="docutils literal notranslate"><span class="pre">Manual_Device_Thread.update_config_settings()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_IOC"><code class="docutils literal notranslate"><span class="pre">Run_IOC</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_IOC.info_step"><code class="docutils literal notranslate"><span class="pre">Run_IOC.info_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_IOC.run"><code class="docutils literal notranslate"><span class="pre">Run_IOC.run()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_IOC.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Run_IOC.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_IOC.terminate"><code class="docutils literal notranslate"><span class="pre">Run_IOC.terminate()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_IOC.write_to_ioc"><code class="docutils literal notranslate"><span class="pre">Run_IOC.write_to_ioc()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol"><code class="docutils literal notranslate"><span class="pre">Run_Protocol</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.abort"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.abort()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.info_step"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.info_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.pause"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.pause()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.protocol_done"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.protocol_done</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.resume"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.resume()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.run"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.run()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.run_protocol"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.run_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.sig_step"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.sig_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol.write_to_console"><code class="docutils literal notranslate"><span class="pre">Run_Protocol.write_to_console()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.abort"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.abort()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.info_step"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.info_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.pause"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.pause()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.protocol_done"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.protocol_done</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.resume"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.resume()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.run"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.run()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.run_protocol"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.run_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.sig_step"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.sig_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.qthreads.Run_Protocol_test.write_to_console"><code class="docutils literal notranslate"><span class="pre">Run_Protocol_test.write_to_console()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.theme_changing">nomad_camels.utility.theme_changing module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.theme_changing.change_theme"><code class="docutils literal notranslate"><span class="pre">change_theme()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.tqdm_progress_bar">nomad_camels.utility.tqdm_progress_bar module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.tqdm_progress_bar.ProgressBar"><code class="docutils literal notranslate"><span class="pre">ProgressBar</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.tqdm_progress_bar.ProgressBar.emit"><code class="docutils literal notranslate"><span class="pre">ProgressBar.emit()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.treeView_functions">nomad_camels.utility.treeView_functions module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.treeView_functions.getItemIndex"><code class="docutils literal notranslate"><span class="pre">getItemIndex()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.treeView_functions.get_substeps"><code class="docutils literal notranslate"><span class="pre">get_substeps()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.treeView_functions.iterItem"><code class="docutils literal notranslate"><span class="pre">iterItem()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.update_camels">nomad_camels.utility.update_camels module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.update_camels.auto_update"><code class="docutils literal notranslate"><span class="pre">auto_update()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.update_camels.check_up_to_date"><code class="docutils literal notranslate"><span class="pre">check_up_to_date()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.update_camels.get_version"><code class="docutils literal notranslate"><span class="pre">get_version()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.update_camels.question_message_box"><code class="docutils literal notranslate"><span class="pre">question_message_box()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.update_camels.restart_camels"><code class="docutils literal notranslate"><span class="pre">restart_camels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.update_camels.update_camels"><code class="docutils literal notranslate"><span class="pre">update_camels()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility.variables_handling">nomad_camels.utility.variables_handling module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.add_actions_from_dict"><code class="docutils literal notranslate"><span class="pre">add_actions_from_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.check_data_type"><code class="docutils literal notranslate"><span class="pre">check_data_type()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.check_eval"><code class="docutils literal notranslate"><span class="pre">check_eval()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.get_color"><code class="docutils literal notranslate"><span class="pre">get_color()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.get_data"><code class="docutils literal notranslate"><span class="pre">get_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.get_eval"><code class="docutils literal notranslate"><span class="pre">get_eval()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.get_menus"><code class="docutils literal notranslate"><span class="pre">get_menus()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.get_output_channels"><code class="docutils literal notranslate"><span class="pre">get_output_channels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.utility.variables_handling.get_write_from_data_type"><code class="docutils literal notranslate"><span class="pre">get_write_from_data_type()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.utility">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

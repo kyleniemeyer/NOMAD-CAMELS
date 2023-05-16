@@ -7,6 +7,7 @@
   <title>nomad_camels.tests package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,6 +30,7 @@
           
           <a href="index.html" class="icon icon-home">
             NOMAD-CAMELS
+              <img src="_static/camels_horizontal.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,47 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">nomad_camels.tests package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-nomad_camels.tests.instrument_management_test">nomad_camels.tests.instrument_management_test module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.tests.instrument_management_test.install_demo"><code class="docutils literal notranslate"><span class="pre">install_demo()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.instrument_management_test.test_add_device"><code class="docutils literal notranslate"><span class="pre">test_add_device()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.instrument_management_test.test_install_demo_device"><code class="docutils literal notranslate"><span class="pre">test_install_demo_device()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.tests.protocol_test">nomad_camels.tests.protocol_test module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.catalog_maker"><code class="docutils literal notranslate"><span class="pre">catalog_maker()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.ensure_demo_in_devices"><code class="docutils literal notranslate"><span class="pre">ensure_demo_in_devices()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.get_action_from_name"><code class="docutils literal notranslate"><span class="pre">get_action_from_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.get_row_from_channel_table"><code class="docutils literal notranslate"><span class="pre">get_row_from_channel_table()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.run_test_protocol"><code class="docutils literal notranslate"><span class="pre">run_test_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.select_step_by_name"><code class="docutils literal notranslate"><span class="pre">select_step_by_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.single_variable_if"><code class="docutils literal notranslate"><span class="pre">single_variable_if()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_change_dev_config"><code class="docutils literal notranslate"><span class="pre">test_change_dev_config()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_for_loop"><code class="docutils literal notranslate"><span class="pre">test_for_loop()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_gradient_descent"><code class="docutils literal notranslate"><span class="pre">test_gradient_descent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_if_and_set_variables"><code class="docutils literal notranslate"><span class="pre">test_if_and_set_variables()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_nd_sweep"><code class="docutils literal notranslate"><span class="pre">test_nd_sweep()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_read_channels"><code class="docutils literal notranslate"><span class="pre">test_read_channels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_run_subprotocol"><code class="docutils literal notranslate"><span class="pre">test_run_subprotocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_set_channels"><code class="docutils literal notranslate"><span class="pre">test_set_channels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_simple_sweep_with_plot_and_fit"><code class="docutils literal notranslate"><span class="pre">test_simple_sweep_with_plot_and_fit()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_trigger_and_read_channels"><code class="docutils literal notranslate"><span class="pre">test_trigger_and_read_channels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_wait"><code class="docutils literal notranslate"><span class="pre">test_wait()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.tests.protocol_test.test_while_loop"><code class="docutils literal notranslate"><span class="pre">test_while_loop()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.tests.startup_test">nomad_camels.tests.startup_test module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.tests.startup_test.test_startup"><code class="docutils literal notranslate"><span class="pre">test_startup()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Manual Controls &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/CAMELS.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NOMAD-CAMELS
+              <img src="../../_static/camels_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using Manual Controls</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/tutorials/quick_start_manual_control.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-manual-controls">
+<h1>Using Manual Controls<a class="headerlink" href="#using-manual-controls" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Manual</span> <span class="pre">Control</span></code> functionality allows you to set individual instrument channels (e.g. stage in x direction or a voltage output of a SMU)</p>
+<section id="add-manual-control">
+<h2>1. Add Manual Control<a class="headerlink" href="#add-manual-control" title="Permalink to this heading"></a></h2>
+<p>To start  click the ➕ symbol next to <code class="docutils literal notranslate"><span class="pre">Manual</span> <span class="pre">Control</span></code>. You can now select which type of manual control you want to add. The options depend on the instruments you have installed. The most basic manual control is the <code class="docutils literal notranslate"><span class="pre">Stage_Control</span></code> which sets individual channels. It is mainly designed for motorized stages but can be used to control most instruments.</p>
+</section>
+<section id="configure-manual-control">
+<h2>2. Configure Manual Control<a class="headerlink" href="#configure-manual-control" title="Permalink to this heading"></a></h2>
+<p>Select which axis the manual control should use. You must also select from which channel it should read the position (<code class="docutils literal notranslate"><span class="pre">readback</span> <span class="pre">axis</span></code>) . This is often the same channel as the <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">axis</span></code>.
+<img alt="img_45.png" src="../../_images/img_45.png" /></p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code> and <code class="docutils literal notranslate"><span class="pre">start</span></code> the manual control.<br />
+<img alt="img_46.png" src="../../_images/img_46.png" /></p>
+<p>This opens the stage control.<br />
+<img alt="img_47.png" src="../../_images/img_47.png" /><br />
+Here you can set the step size and use the green arrow keys to control the selected axis. You can also jump to a specific value by entering values below the <code class="docutils literal notranslate"><span class="pre">Go</span> <span class="pre">To</span></code> button and then pressing the button.</p>
+<blockquote>
+<div><p>⚠ The value of <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">between</span> <span class="pre">readings</span></code> is the time in seconds after which the axis is read (using the set <code class="docutils literal notranslate"><span class="pre">readback</span> <span class="pre">axis</span></code> channel).</p>
+</div></blockquote>
+<p><a class="reference internal" href="#using-manual-controls"><span class="xref myst">⇧ Back to the top ⇧</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

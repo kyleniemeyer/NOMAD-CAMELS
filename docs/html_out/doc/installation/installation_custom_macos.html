@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom macOS Installation &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/CAMELS.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NOMAD-CAMELS
+              <img src="../../_static/camels_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Custom macOS Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/installation/installation_custom_macos.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="custom-macos-installation">
+<h1>Custom macOS Installation<a class="headerlink" href="#custom-macos-installation" title="Permalink to this heading"></a></h1>
+<section id="pyenv-and-python-installation">
+<h2>1. Pyenv and Python Installation<a class="headerlink" href="#pyenv-and-python-installation" title="Permalink to this heading"></a></h2>
+<p>This uses <code class="docutils literal notranslate"><span class="pre">homebrew</span></code> to install pyenv (<a class="reference external" href="https://brew.sh/">see here</a> for more information on <code class="docutils literal notranslate"><span class="pre">homebrew</span></code>).</p>
+<ul>
+<li><p>Run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>update
+brew<span class="w"> </span>install<span class="w"> </span>pyenv
+</pre></div>
+</div>
+<p>to install pyenv.</p>
+</li>
+<li><p>You need Xcode command line tools</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcode-select<span class="w"> </span>--install
+</pre></div>
+</div>
+</li>
+<li><p>Then install dependencies</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>openssl<span class="w"> </span>readline<span class="w"> </span>sqlite3<span class="w"> </span>xz<span class="w"> </span>zlib
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="python-installation">
+<h2>2. Python Installation<a class="headerlink" href="#python-installation" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Restart terminal</p></li>
+<li><p>Type in to the terminal</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyenv</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">python_version</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>for example <code class="docutils literal notranslate"><span class="pre">pyenv</span> <span class="pre">install</span> <span class="pre">3.11.3</span></code>.<br />
+<code class="docutils literal notranslate"><span class="pre">&lt;python_version&gt;</span></code> is the python version you want to install (3.11.3 or higher is suggested for NOMAD-CAMELS).</p>
+</li>
+</ul>
+</section>
+<section id="install-camels">
+<h2>3. Install CAMELS<a class="headerlink" href="#install-camels" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Create a folder where you want to install CAMELS (e.g. <code class="docutils literal notranslate"><span class="pre">\NOMAD-CAMELS\</span></code>)</p></li>
+<li><p>Type in your powershell <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">\NOMAD-CAMELS\;pyenv</span> <span class="pre">local</span> <span class="pre">&lt;python_version&gt;</span> </code></p></li>
+<li><p>If you have a working python environment (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> in <code class="docutils literal notranslate"><span class="pre">/NOMAD-CAMELS/</span></code> returns <code class="docutils literal notranslate"><span class="pre">&lt;python_version&gt;</span></code>) then you can continue to install CAMELS.</p></li>
+<li><p>Now  run the command <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.desertenv</span></code> in this folder to create a virtual python environment (using the python version given by <code class="docutils literal notranslate"><span class="pre">pyenv</span> <span class="pre">local</span> <span class="pre">&lt;python_version&gt;</span></code>)</p></li>
+<li><p>Now  activate the environment with <code class="docutils literal notranslate"><span class="pre">.\.desertenv\Scripts\activate</span></code></p></li>
+<li><p>Now type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>--index-url<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>--extra-index-url<span class="w"> </span>https://pypi.org/simple<span class="w"> </span>nomad-camels<span class="w"> </span>
+</pre></div>
+</div>
+<p>to install CAMELS.</p>
+</li>
+</ul>
+</section>
+<section id="run-camels">
+<h2>4. Run CAMELS<a class="headerlink" href="#run-camels" title="Permalink to this heading"></a></h2>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">/.desertenv/Lib/site-packages/nomad_camels/</span></code> and run CAMELS using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>CAMELS_start.py
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

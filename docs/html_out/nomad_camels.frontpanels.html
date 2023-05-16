@@ -7,6 +7,7 @@
   <title>nomad_camels.frontpanels package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,6 +30,7 @@
           
           <a href="index.html" class="icon icon-home">
             NOMAD-CAMELS
+              <img src="_static/camels_horizontal.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,186 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">nomad_camels.frontpanels package</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.device_add_dialog">nomad_camels.frontpanels.device_add_dialog module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.build_tree"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.build_tree()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.de_activate_device"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.de_activate_device()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.keyPressEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.search_by_name"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.search_by_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.search_by_tag"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.search_by_tag()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.AddDeviceDialog.tree_click"><code class="docutils literal notranslate"><span class="pre">AddDeviceDialog.tree_click()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.getAllDevices"><code class="docutils literal notranslate"><span class="pre">getAllDevices()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.device_add_dialog.getInstalledDevices"><code class="docutils literal notranslate"><span class="pre">getInstalledDevices()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.instrument_config">nomad_camels.frontpanels.instrument_config module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config"><code class="docutils literal notranslate"><span class="pre">Instrument_Config</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.add_instance"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.add_instance()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.build_table"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.build_table()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.get_all_names"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.get_all_names()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.get_config"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.get_config()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.get_current_config"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.get_current_config()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.name_config_changed"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.name_config_changed()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.remove_instance"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.remove_instance()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.table_click"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.table_click()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_config.Instrument_Config.update_channels"><code class="docutils literal notranslate"><span class="pre">Instrument_Config.update_channels()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.instrument_installer">nomad_camels.frontpanels.instrument_installer module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Install_Thread"><code class="docutils literal notranslate"><span class="pre">Install_Thread</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Install_Thread.info_step"><code class="docutils literal notranslate"><span class="pre">Install_Thread.info_step</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Install_Thread.run"><code class="docutils literal notranslate"><span class="pre">Install_Thread.run()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Install_Thread.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Install_Thread.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Install_Thread.val_step"><code class="docutils literal notranslate"><span class="pre">Install_Thread.val_step</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.build_table"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.build_table()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.checkBox_change"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.checkBox_change()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.get_checked_devs"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.get_checked_devs()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.install_selected"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.install_selected()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.instruments_updated"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.instruments_updated</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.select_all"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.select_all()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.select_none"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.select_none()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.thread_done"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.thread_done()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.uninstall_selected"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.uninstall_selected()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.Instrument_Installer.update_installed"><code class="docutils literal notranslate"><span class="pre">Instrument_Installer.update_installed()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.getAllDevices"><code class="docutils literal notranslate"><span class="pre">getAllDevices()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.getInstalledDevices"><code class="docutils literal notranslate"><span class="pre">getInstalledDevices()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.instrument_installer.install_instrument"><code class="docutils literal notranslate"><span class="pre">install_instrument()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.manage_instruments">nomad_camels.frontpanels.manage_instruments module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.manage_instruments.ManageInstruments"><code class="docutils literal notranslate"><span class="pre">ManageInstruments</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.manage_instruments.ManageInstruments.accept"><code class="docutils literal notranslate"><span class="pre">ManageInstruments.accept()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.manage_instruments.ManageInstruments.closeEvent"><code class="docutils literal notranslate"><span class="pre">ManageInstruments.closeEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.manage_instruments.ManageInstruments.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">ManageInstruments.keyPressEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.manage_instruments.ManageInstruments.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">ManageInstruments.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.plot_definer">nomad_camels.frontpanels.plot_definer module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Definer"><code class="docutils literal notranslate"><span class="pre">Fit_Definer</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Definer.change_func"><code class="docutils literal notranslate"><span class="pre">Fit_Definer.change_func()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Definer.get_data"><code class="docutils literal notranslate"><span class="pre">Fit_Definer.get_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Definer.load_data"><code class="docutils literal notranslate"><span class="pre">Fit_Definer.load_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Definer.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Fit_Definer.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Info"><code class="docutils literal notranslate"><span class="pre">Fit_Info</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Info.get_name"><code class="docutils literal notranslate"><span class="pre">Fit_Info.get_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Fit_Info.get_variables"><code class="docutils literal notranslate"><span class="pre">Fit_Info.get_variables()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Button_Overview"><code class="docutils literal notranslate"><span class="pre">Plot_Button_Overview</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Button_Overview.define_plots"><code class="docutils literal notranslate"><span class="pre">Plot_Button_Overview.define_plots()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Button_Overview.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">Plot_Button_Overview.keyPressEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Button_Overview.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Plot_Button_Overview.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer"><code class="docutils literal notranslate"><span class="pre">Plot_Definer</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer.accept"><code class="docutils literal notranslate"><span class="pre">Plot_Definer.accept()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer.change_plot_def"><code class="docutils literal notranslate"><span class="pre">Plot_Definer.change_plot_def()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer.plot_added"><code class="docutils literal notranslate"><span class="pre">Plot_Definer.plot_added()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer.plot_removed"><code class="docutils literal notranslate"><span class="pre">Plot_Definer.plot_removed()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer.reject"><code class="docutils literal notranslate"><span class="pre">Plot_Definer.reject()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Definer.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Plot_Definer.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Info"><code class="docutils literal notranslate"><span class="pre">Plot_Info</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Info.get_fit_vars"><code class="docutils literal notranslate"><span class="pre">Plot_Info.get_fit_vars()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Plot_Info.update_name"><code class="docutils literal notranslate"><span class="pre">Plot_Info.update_name()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer.add_y"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer.add_y()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer.get_data"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer.get_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer.remove_y"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer.remove_y()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_2D"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_2D</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_2D.get_data"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_2D.get_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_2D.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_2D.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_List"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_List</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_List.get_data"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_List.get_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_List.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_List.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_XY"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_XY</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_XY.fit_change"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_XY.fit_change()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_XY.get_data"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_XY.get_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_XY.load_data"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_XY.load_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_XY.plot_change"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_XY.plot_change()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.Single_Plot_Definer_XY.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Single_Plot_Definer_XY.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.add_fit"><code class="docutils literal notranslate"><span class="pre">add_fit()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.plot_definer.make_table_data"><code class="docutils literal notranslate"><span class="pre">make_table_data()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.protocol_config">nomad_camels.frontpanels.protocol_config module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config"><code class="docutils literal notranslate"><span class="pre">Protocol_Config</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.accept"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.accept()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.accepted"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.accepted</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.add_loop_step"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.add_loop_step()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.build_protocol_sequence"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.build_protocol_sequence()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.change_name"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.change_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.change_step_name"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.change_step_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.check_protocol_name"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.check_protocol_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.closeEvent"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.closeEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.closing"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.closing</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.copy_loop_step"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.copy_loop_step()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.copy_shortcut"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.copy_shortcut()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.cut_loop_step"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.cut_loop_step()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.cut_shortcut"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.cut_shortcut()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.enable_step_move"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.enable_step_move()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.get_step_config"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.get_step_config()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.keyPressEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.move_loop_step"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.move_loop_step()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.paste_shortcut"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.paste_shortcut()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.remove_loop_step"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.remove_loop_step()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.sequence_right_click"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.sequence_right_click()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.tree_click_sequence"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.tree_click_sequence()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.update_add_step_actions"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.update_add_step_actions()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.protocol_config.Protocol_Config.update_loop_step_order"><code class="docutils literal notranslate"><span class="pre">Protocol_Config.update_loop_step_order()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels.settings_window">nomad_camels.frontpanels.settings_window module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.settings_window.Settings_Window"><code class="docutils literal notranslate"><span class="pre">Settings_Window</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.settings_window.Settings_Window.change_theme"><code class="docutils literal notranslate"><span class="pre">Settings_Window.change_theme()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.settings_window.Settings_Window.get_settings"><code class="docutils literal notranslate"><span class="pre">Settings_Window.get_settings()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.settings_window.Settings_Window.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">Settings_Window.keyPressEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.frontpanels.settings_window.Settings_Window.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Settings_Window.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.frontpanels">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

@@ -7,6 +7,7 @@
   <title>nomad_camels.bluesky_handling package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,6 +30,7 @@
           
           <a href="index.html" class="icon icon-home">
             NOMAD-CAMELS
+              <img src="_static/camels_horizontal.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,138 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">nomad_camels.bluesky_handling package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.EpicsFieldSignal">nomad_camels.bluesky_handling.EpicsFieldSignal module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.get"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.get()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.just_readback"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.just_readback()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.put"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.put()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignal.subscriptions"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignal.subscriptions</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignalRO</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.put"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignalRO.put()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.EpicsFieldSignal.EpicsFieldSignalRO.subscriptions"><code class="docutils literal notranslate"><span class="pre">EpicsFieldSignalRO.subscriptions</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.TriggerEpicsSignalRO">nomad_camels.bluesky_handling.TriggerEpicsSignalRO module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.callback_method"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO.callback_method()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.subscriptions"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO.subscriptions</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.TriggerEpicsSignalRO.TriggerEpicsSignalRO.trigger"><code class="docutils literal notranslate"><span class="pre">TriggerEpicsSignalRO.trigger()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.builder_helper_functions">nomad_camels.bluesky_handling.builder_helper_functions module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.builder_helper_functions.get_plot_add_string"><code class="docutils literal notranslate"><span class="pre">get_plot_add_string()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.builder_helper_functions.plot_creator"><code class="docutils literal notranslate"><span class="pre">plot_creator()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.custom_function_signal">nomad_camels.bluesky_handling.custom_function_signal module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.describe"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.describe()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.get"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.get()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.put"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.put()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.subscriptions"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.subscriptions</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_Signal.trigger"><code class="docutils literal notranslate"><span class="pre">Custom_Function_Signal.trigger()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.describe"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.describe()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.get"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.get()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.subscriptions"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.subscriptions</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.custom_function_signal.Custom_Function_SignalRO.trigger"><code class="docutils literal notranslate"><span class="pre">Custom_Function_SignalRO.trigger()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.evaluation_helper">nomad_camels.bluesky_handling.evaluation_helper module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator"><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval"><code class="docutils literal notranslate"><span class="pre">Evaluator.eval()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.eval_string"><code class="docutils literal notranslate"><span class="pre">Evaluator.eval_string()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.event"><code class="docutils literal notranslate"><span class="pre">Evaluator.event()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.evaluation_helper.Evaluator.is_to_date"><code class="docutils literal notranslate"><span class="pre">Evaluator.is_to_date()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.helper_functions">nomad_camels.bluesky_handling.helper_functions module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper"><code class="docutils literal notranslate"><span class="pre">BoxHelper</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper.executor"><code class="docutils literal notranslate"><span class="pre">BoxHelper.executor</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.BoxHelper.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">BoxHelper.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box"><code class="docutils literal notranslate"><span class="pre">Prompt_Box</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.set_done"><code class="docutils literal notranslate"><span class="pre">Prompt_Box.set_done()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.start_execution"><code class="docutils literal notranslate"><span class="pre">Prompt_Box.start_execution()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Prompt_Box.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Prompt_Box.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box"><code class="docutils literal notranslate"><span class="pre">Value_Box</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.accept"><code class="docutils literal notranslate"><span class="pre">Value_Box.accept()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.reject"><code class="docutils literal notranslate"><span class="pre">Value_Box.reject()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.start_execution"><code class="docutils literal notranslate"><span class="pre">Value_Box.start_execution()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.Value_Box.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Value_Box.staticMetaObject</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.clear_plots"><code class="docutils literal notranslate"><span class="pre">clear_plots()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_channels"><code class="docutils literal notranslate"><span class="pre">get_channels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_fit_results"><code class="docutils literal notranslate"><span class="pre">get_fit_results()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_inner_range"><code class="docutils literal notranslate"><span class="pre">get_inner_range()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.get_range"><code class="docutils literal notranslate"><span class="pre">get_range()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.gradient_descent"><code class="docutils literal notranslate"><span class="pre">gradient_descent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.read_wo_trigger"><code class="docutils literal notranslate"><span class="pre">read_wo_trigger()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.simplify_configs_dict"><code class="docutils literal notranslate"><span class="pre">simplify_configs_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.helper_functions.trigger_multi"><code class="docutils literal notranslate"><span class="pre">trigger_multi()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.make_catalog">nomad_camels.bluesky_handling.make_catalog module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.make_catalog.make_yml"><code class="docutils literal notranslate"><span class="pre">make_yml()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.protocol_builder">nomad_camels.bluesky_handling.protocol_builder module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.protocol_builder.build_protocol"><code class="docutils literal notranslate"><span class="pre">build_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.protocol_builder.user_sample_string"><code class="docutils literal notranslate"><span class="pre">user_sample_string()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.special_plan_stubs">nomad_camels.bluesky_handling.special_plan_stubs module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.special_plan_stubs.trigger_and_read_devices"><code class="docutils literal notranslate"><span class="pre">trigger_and_read_devices()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling.visa_signal">nomad_camels.bluesky_handling.visa_signal module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device"><code class="docutils literal notranslate"><span class="pre">VISA_Device</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device.component_names"><code class="docutils literal notranslate"><span class="pre">VISA_Device.component_names</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Device.subscriptions"><code class="docutils literal notranslate"><span class="pre">VISA_Device.subscriptions</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.describe"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read.describe()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.get"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read.get()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Read.subscriptions"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Read.subscriptions</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.change_instrument"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.change_instrument()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.describe"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.describe()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.put"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.put()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.VISA_Signal_Write.subscriptions"><code class="docutils literal notranslate"><span class="pre">VISA_Signal_Write.subscriptions</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.close_resources"><code class="docutils literal notranslate"><span class="pre">close_resources()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.bluesky_handling.visa_signal.list_resources"><code class="docutils literal notranslate"><span class="pre">list_resources()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.bluesky_handling">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

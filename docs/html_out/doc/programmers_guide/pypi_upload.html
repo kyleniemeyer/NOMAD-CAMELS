@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uploading a new NOMAD-CAMELS version to PyPi &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/CAMELS.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NOMAD-CAMELS
+              <img src="../../_static/camels_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Uploading a new NOMAD-CAMELS version to PyPi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/programmers_guide/pypi_upload.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+<section id="uploading-a-new-nomad-camels-version-to-pypi">
+<h1>Uploading a new NOMAD-CAMELS version to PyPi<a class="headerlink" href="#uploading-a-new-nomad-camels-version-to-pypi" title="Permalink to this heading"></a></h1>
+<p>The “backbone” of creating the PyPi project is the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file located in the root directory. Here almost all important settings are configured. The dependencies on other python packages is maintained with the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file. <br />
+The <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code> file contains information about static non-python files that should be included (e.g. folders of images).</p>
+<section id="upload-workflow">
+<h2>Upload Workflow<a class="headerlink" href="#upload-workflow" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Make your desired changes in the <code class="docutils literal notranslate"><span class="pre">nomad_camels</span></code> folder (the main app folder).</p></li>
+<li><p>Run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>build
+</pre></div>
+</div>
+<p>in the folder where the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file is located (should be located in the parent folder of the <code class="docutils literal notranslate"><span class="pre">nomad_camels</span></code> folder). This creates the successful builds (<code class="docutils literal notranslate"><span class="pre">nomad_camels-X.Y.Z.tar.gz</span></code> and <code class="docutils literal notranslate"><span class="pre">nomad_camels-X.Y.Z-py3-none-any.whl</span></code>) in <code class="docutils literal notranslate"><span class="pre">/dist/</span></code>.  <br />
+The folder structure should look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_folder</span><span class="o">/</span>
+<span class="o">|---</span> <span class="n">dist</span><span class="o">/</span>
+      <span class="o">|---</span> <span class="n">nomad_camels</span><span class="o">-</span><span class="n">X</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">Z</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+      <span class="o">|---</span> <span class="n">nomad_camels</span><span class="o">-</span><span class="n">X</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">Z</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<span class="o">|---</span> <span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
+<span class="o">|---</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|---</span> <span class="n">MANIFEST</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">|---</span> <span class="n">nomad_camels</span><span class="o">/</span>
+      <span class="o">|---</span> <span class="n">MainApp</span><span class="o">.</span><span class="n">py</span>
+      <span class="o">|---</span> <span class="s1">&#39;many other files ...&#39;</span> 
+</pre></div>
+</div>
+<p>where X.Y.Z is the version number (MAJOR.MINOR.PATCH) given in the <code class="docutils literal notranslate"><span class="pre">.toml</span></code> file.</p>
+</li>
+<li><p>To upload the builds to PyPi (<strong>!currently uploads to TestPyPi as it is under development!</strong>) run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>twine<span class="w"> </span>upload<span class="w"> </span>--repository<span class="w"> </span>testpypi<span class="w"> </span>dist/nomad*
+</pre></div>
+</div>
+<blockquote>
+<div><p>⚠ Make sure there are only the newly built files in <code class="docutils literal notranslate"><span class="pre">dist/</span></code> that match <code class="docutils literal notranslate"><span class="pre">nomad*</span></code>. If you have multiple build files in <code class="docutils literal notranslate"><span class="pre">dist/</span></code> the upload might not work as desired.</p>
+</div></blockquote>
+<p>Now enter <code class="docutils literal notranslate"><span class="pre">__token__</span></code> as the username and enter your saved API token as the password to complete the upload.</p>
+</li>
+<li><p>The new version should then be available on https://test.pypi.org/project/nomad-camels/</p></li>
+</ol>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h2>
+<p>To install the most recent version of NOMAD-CAMELS into your python environment run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>--index-url<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>--extra-index-url<span class="w"> </span>https://pypi.org/simple<span class="w"> </span>nomad-camels
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--extra-index-url</span></code> flag allows dependencies to be installed from PyPi.<br />
+The <code class="docutils literal notranslate"><span class="pre">--no-cache-dir</span></code> flag prevents any locally saved NOMAD-CAMELS version to be installed instead of the most recent remote version.</p>
+<p style="text-align:left;">
+  <span style="color: grey;">
+  <a href="../index.html">&larr; Back</a>
+  </span>
+  <span style="float:right;">
+    <a href="quick_start.html">Next &rarr;</a><br>
+  </span>
+</p></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

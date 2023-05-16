@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changing CAMELS Installer &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/CAMELS.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NOMAD-CAMELS
+              <img src="../../_static/camels_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Changing CAMELS Installer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/programmers_guide/camels_installer.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+<section id="changing-camels-installer">
+<h1>Changing CAMELS Installer<a class="headerlink" href="#changing-camels-installer" title="Permalink to this heading"></a></h1>
+<p>Installs CAMELS software and all required packages</p>
+<p>The relevant installer <a class="reference internal" href="#/Output/NOMAD-CAMELS_installer.exe"><span class="xref myst">NOMAD-CAMELS_installer.exe</span></a>
+file is located in <a class="reference internal" href="#/Output/"><span class="xref myst">Output</span></a></p>
+<p>Visit the <a class="reference external" href="https://fau-lap.github.io/CAMELS/">CAMELS Homepage</a> for more information</p>
+<section id="workflow">
+<h2>1. Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
+<p>Brief description of the workflow when the installer should be updated.</p>
+<ol class="arabic">
+<li><p>Change python code in <code class="docutils literal notranslate"><span class="pre">/Python_code/setup_camels.py</span></code> (see <a class="reference internal" href="#21-changes-to-python-or-environment"><span class="xref myst">here</span></a>)</p></li>
+<li><p>Create .exe file from the python code. To do this run following code in <code class="docutils literal notranslate"><span class="pre">/Python_code/</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyinstaller<span class="w"> </span>--onefile<span class="w"> </span>--nowindow<span class="w"> </span>setup.py
+</pre></div>
+</div>
+<p>This creates the <code class="docutils literal notranslate"><span class="pre">setup_camels.exe</span></code> file under <code class="docutils literal notranslate"><span class="pre">/Python_code/dist/</span></code></p>
+</li>
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">&quot;\run\runCamels.bat&quot;</span></code> to change the way CAMELS is launched (see <a class="reference internal" href="#22-changes-to-the-way-camels-is-started-via-shortcuts"><span class="xref myst">here</span></a>)</p></li>
+<li><p>Convert the bat file to an exe file (using for example <a class="reference external" href="https://bat-to-exe-converter-x64.de.softonic.com/">Bat To Exe Converter</a>)</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">CAMELS_installer.iss</span></code> file and perform any required changes. Then compile the exe.<br />
+The final file <code class="docutils literal notranslate"><span class="pre">NOMAD-CAMELS_installer.exe</span></code> can be found under <code class="docutils literal notranslate"><span class="pre">/Output/</span></code></p></li>
+</ol>
+</section>
+<section id="what-can-be-changed">
+<h2>2. What can be changed?<a class="headerlink" href="#what-can-be-changed" title="Permalink to this heading"></a></h2>
+<p>Brief description of the possible (and most likely) changes.</p>
+<section id="changes-to-python-or-environment">
+<h3>2.1. Changes to python or environment<a class="headerlink" href="#changes-to-python-or-environment" title="Permalink to this heading"></a></h3>
+<p>If you want to perform changed regarding the NOMAD-CAMELS version that is installed or
+changes to pyenv (python version) or the python environment then you have to perform
+changes in the python code of the <a class="reference internal" href="#/Python_code/setup_camels.py"><span class="xref myst">setup.py</span></a> file. Here the python version is currently hard-coded as <code class="docutils literal notranslate"><span class="pre">3.11.3</span></code>. The <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command uses the most current version of NOMAD-CAMELS and ignores locally available versions with <code class="docutils literal notranslate"><span class="pre">--no-cache-dir</span></code>.</p>
+</section>
+<section id="changes-to-the-way-camels-is-started-via-shortcuts">
+<h3>2.2. Changes to the way CAMELS is started (via shortcuts)<a class="headerlink" href="#changes-to-the-way-camels-is-started-via-shortcuts" title="Permalink to this heading"></a></h3>
+<p>If you want to change the way CAMELS is startet you must modify the installation.exe file by modifying the InnoSetup file <code class="docutils literal notranslate"><span class="pre">.iss</span></code>. Here you can alter the shortcuts under <code class="docutils literal notranslate"><span class="pre">[Icons]</span></code>.
+The shortcuts execute the NOMAD-CAMELS.exe which is a simple exe convertion of the batch file <code class="docutils literal notranslate"><span class="pre">runCamels.bat</span></code>. This  reads  the <code class="docutils literal notranslate"><span class="pre">NOMAD-CAMELS.ini</span></code> and reads the paths to the exe and the installation path from it. You can change these two paths manually to change the python environment that should start CAMELS.</p>
+</section>
+<section id="changes-to-the-supporting-folders">
+<h3>2.3. Changes to the supporting folders<a class="headerlink" href="#changes-to-the-supporting-folders" title="Permalink to this heading"></a></h3>
+<p>For this you must modify the <code class="docutils literal notranslate"><span class="pre">.iss</span></code> file.<br />
+The installer creates the folder <code class="docutils literal notranslate"><span class="pre">%localappdata%\nomad_camels\Presets\Backup</span></code> where all the settings presets (user info, sample info, used devices, etc.) are saved. Change the entry under <code class="docutils literal notranslate"><span class="pre">[Dirs]</span></code> to change the location of this folder.</p>
+</section>
+</section>
+<section id="code-signing">
+<h2>3. Code Signing<a class="headerlink" href="#code-signing" title="Permalink to this heading"></a></h2>
+<p>To prevent an <code class="docutils literal notranslate"><span class="pre">Unknown</span> <span class="pre">Publisher</span></code> error when executing the <code class="docutils literal notranslate"><span class="pre">NOMAD-CAMELS_installer.exe</span></code> one has to sign the <code class="docutils literal notranslate"><span class="pre">exe</span></code> before publishing (pushing to the GitHub repo).</p>
+<section id="using-windows-signtool">
+<h3>3.1. Using Windows Signtool<a class="headerlink" href="#using-windows-signtool" title="Permalink to this heading"></a></h3>
+<p>You can use Windows Signtool from the Windows SDK to sign your executables.</p>
+<p>You will need a <code class="docutils literal notranslate"><span class="pre">.pfx</span></code> certificate and the corresponding password (called <code class="docutils literal notranslate"><span class="pre">&lt;your_pfx_password&gt;</span></code> below).</p>
+<p>You should <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the folder where the <code class="docutils literal notranslate"><span class="pre">signtool.exe</span></code> is located. This is often in a path similar to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Windows</span> <span class="pre">Kits\10\bin\10.0.22000.0\x64</span></code>.</p>
+<blockquote>
+<div><p>If you do not have a <code class="docutils literal notranslate"><span class="pre">signtool.exe</span></code> then you must install it from the <a class="reference external" href="https://developer.microsoft.com/de-de/windows/downloads/windows-sdk/">Windows SDK installer</a>.</p>
+</div></blockquote>
+<p>If you have the <code class="docutils literal notranslate"><span class="pre">signtool.exe</span></code> and are in its folder then run this in your PowerShell with <strong>admin rights</strong>:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">signtool</span><span class="p">.</span><span class="n">exe</span> <span class="n">sign</span> <span class="p">/</span><span class="n">f</span> <span class="s2">&quot;/path/to/certificate/certificate.pfx&quot;</span> <span class="p">/</span><span class="n">p</span> <span class="s2">&quot;&lt;your_pfx_password&gt;&quot;</span> <span class="p">/</span><span class="n">fd</span> <span class="n">sha256</span> <span class="p">/</span><span class="n">t</span> <span class="n">http</span><span class="p">://</span><span class="n">timestamp</span><span class="p">.</span><span class="n">sectigo</span><span class="p">.</span><span class="n">com</span> <span class="s2">&quot;/path/to/NOMAD-CAMELS/installer/NOMAD-CAMELS_installer.exe&quot;</span>
+</pre></div>
+</div>
+<p>For more information on the options look <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe#sign">here</a>.</p>
+<p>The executable should now be signed and you are ready to publish the new version.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

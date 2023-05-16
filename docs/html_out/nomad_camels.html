@@ -7,6 +7,7 @@
   <title>nomad_camels package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,6 +30,7 @@
           
           <a href="index.html" class="icon icon-home">
             NOMAD-CAMELS
+              <img src="_static/camels_horizontal.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,89 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">nomad_camels package</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-nomad_camels.CAMELS_start">nomad_camels.CAMELS_start module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.CAMELS_start.LoadingScreen"><code class="docutils literal notranslate"><span class="pre">LoadingScreen</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.CAMELS_start.LoadingScreen.set_progress"><code class="docutils literal notranslate"><span class="pre">LoadingScreen.set_progress()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.CAMELS_start.LoadingScreen.set_text"><code class="docutils literal notranslate"><span class="pre">LoadingScreen.set_text()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.CAMELS_start.LoadingScreen.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">LoadingScreen.staticMetaObject</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels.MainApp_v2">nomad_camels.MainApp_v2 module</a><ul>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_button_to_manuals"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_button_to_manuals()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_button_to_meas"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_button_to_meas()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_functions_to_manual_button"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_functions_to_manual_button()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_functions_to_meas_button"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_functions_to_meas_button()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_manual_control"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_manual_control()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_manual_control_to_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_manual_control_to_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_measurement_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_measurement_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_prot_to_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_prot_to_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_subs_from_dict"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_subs_from_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_to_open_windows"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_to_open_windows()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.add_to_plots"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_to_plots()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.build_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.build_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.change_catalog_name"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_catalog_name()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.change_preferences"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_preferences()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.change_preset"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_preset()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.change_theme"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_theme()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.close"><code class="docutils literal notranslate"><span class="pre">MainWindow.close()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.closeEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.closeEvent()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.close_manual_control"><code class="docutils literal notranslate"><span class="pre">MainWindow.close_manual_control()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.close_plots"><code class="docutils literal notranslate"><span class="pre">MainWindow.close_plots()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.edit_sample_info"><code class="docutils literal notranslate"><span class="pre">MainWindow.edit_sample_info()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.edit_user_info"><code class="docutils literal notranslate"><span class="pre">MainWindow.edit_user_info()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.launch_device_builder"><code class="docutils literal notranslate"><span class="pre">MainWindow.launch_device_builder()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.load_backup_preset"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_backup_preset()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.load_preferences"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_preferences()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.load_preset"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_preset()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.load_sample_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_sample_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.load_state"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_state()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.load_user_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_user_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.make_save_dict"><code class="docutils literal notranslate"><span class="pre">MainWindow.make_save_dict()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.manage_instruments"><code class="docutils literal notranslate"><span class="pre">MainWindow.manage_instruments()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.manual_control_order_changed"><code class="docutils literal notranslate"><span class="pre">MainWindow.manual_control_order_changed()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.new_preset"><code class="docutils literal notranslate"><span class="pre">MainWindow.new_preset()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.open_manual_control_config"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_manual_control_config()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.open_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.open_protocol_config"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_protocol_config()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.pause_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.pause_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.populate_manuals_buttons"><code class="docutils literal notranslate"><span class="pre">MainWindow.populate_manuals_buttons()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.populate_meas_buttons"><code class="docutils literal notranslate"><span class="pre">MainWindow.populate_meas_buttons()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.protocol_finished"><code class="docutils literal notranslate"><span class="pre">MainWindow.protocol_finished()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.protocol_order_changed"><code class="docutils literal notranslate"><span class="pre">MainWindow.protocol_order_changed()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.protocol_stepper_signal"><code class="docutils literal notranslate"><span class="pre">MainWindow.protocol_stepper_signal</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.remove_manual_control"><code class="docutils literal notranslate"><span class="pre">MainWindow.remove_manual_control()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.remove_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.remove_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.resume_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.resume_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.run_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.run_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.save_preset_as"><code class="docutils literal notranslate"><span class="pre">MainWindow.save_preset_as()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.save_sample_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.save_sample_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.save_state"><code class="docutils literal notranslate"><span class="pre">MainWindow.save_state()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.save_user_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.save_user_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.start_manual_control"><code class="docutils literal notranslate"><span class="pre">MainWindow.start_manual_control()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">MainWindow.staticMetaObject</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.stop_protocol"><code class="docutils literal notranslate"><span class="pre">MainWindow.stop_protocol()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.toggle_dark_mode"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle_dark_mode()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.update_channels"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_channels()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.update_man_cont_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_man_cont_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.update_prot_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_prot_data()</span></code></a></li>
-<li><a class="reference internal" href="#nomad_camels.MainApp_v2.MainWindow.with_or_without_instruments"><code class="docutils literal notranslate"><span class="pre">MainWindow.with_or_without_instruments()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-nomad_camels">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

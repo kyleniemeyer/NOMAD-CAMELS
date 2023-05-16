@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation and Configuration of a Demo Instrument &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/CAMELS.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NOMAD-CAMELS
+              <img src="../../_static/camels_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation and Configuration of a Demo Instrument</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/tutorials/quick_start_install.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-and-configuration-of-a-demo-instrument">
+<h1>Installation and Configuration of a Demo Instrument<a class="headerlink" href="#installation-and-configuration-of-a-demo-instrument" title="Permalink to this heading"></a></h1>
+<p>This page should help you learn how to use CAMELS, especially if this is your first time using CAMELS. It shows you how to add (install) a new instrument (<code class="docutils literal notranslate"><span class="pre">demo</span> <span class="pre">device</span></code>) to CAMELS, how to configure it, and how to set and measure the <code class="docutils literal notranslate"><span class="pre">demo</span> <span class="pre">device</span></code>.</p>
+<section id="installation-of-demo-device">
+<h2>1. Installation of Demo Device<a class="headerlink" href="#installation-of-demo-device" title="Permalink to this heading"></a></h2>
+<p>When you first start up NOMAD-CAMELS, you should see something like the following:<br />
+<img alt="Initial window on start up" src="../../_images/img2.png" />
+Clicking on the “Manage Instruments” button will open a dialog where you can install available instruments from the CAMELS repository (PyPi).</p>
+<a class="reference internal image-reference" href="../../_images/img_11.png"><img alt="../../_images/img_11.png" src="../../_images/img_11.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="../../_images/img_3.png"><img alt="../../_images/img_3.png" src="../../_images/img_3.png" style="width: 49%;" /></a>
+<p>On the left we can see the instrument selection window and on the right you can see the screen after successful installation of the instruments.</p>
+<ul class="simple">
+<li><p>Check the instruments you want to install. To follow this example  install the <code class="docutils literal notranslate"><span class="pre">demo</span> <span class="pre">device</span></code>.</p></li>
+<li><p>Then click <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">/</span> <span class="pre">update</span> <span class="pre">Selected</span></code> to install the most recent version of the instrument from PyPi (this is done internally with a simple <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;instrument_name&gt;</span></code>).</p></li>
+</ul>
+<p>⚠ This means you can also use the virtual python environment <code class="docutils literal notranslate"><span class="pre">.desertenv</span></code> to manually install devices by running:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-no-cache-dir</span> <span class="p">-</span><span class="n">-index-url</span> <span class="n">https</span><span class="p">://</span><span class="n">test</span><span class="p">.</span><span class="n">pypi</span><span class="p">.</span><span class="n">org</span><span class="p">/</span><span class="n">simple</span><span class="p">/</span> <span class="p">-</span><span class="n">-extra-index-url</span> <span class="n">https</span><span class="p">://</span><span class="n">pypi</span><span class="p">.</span><span class="n">org</span><span class="p">/</span><span class="n">simple</span> <span class="n">nomad_camels_driver_</span><span class="p">&lt;</span><span class="n">parent_driver_name</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>⚠ For this to work you must activate the correct virtual environment first!
+Run this code with the correct path in powershell to activate the virtual environment:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="p">\</span><span class="n">Path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">NOMAD-CAMELS</span><span class="p">\.</span><span class="n">desertenv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span>
+<span class="p">.\</span><span class="n">activate</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="../../_images/img_21.png"><img alt="../../_images/img_21.png" class="align-right" src="../../_images/img_21.png" style="width: 65%;" /></a>
+<p>You can also filter the instruments by their name using the <code class="docutils literal notranslate"><span class="pre">Search</span> <span class="pre">name</span></code> field as you see here.</p>
+<p><br/><br/><br/><br/></p>
+</section>
+<hr class="docutils" />
+<section id="configuring-instruments">
+<h2>2. Configuring Instruments<a class="headerlink" href="#configuring-instruments" title="Permalink to this heading"></a></h2>
+<p>After successful installation you can switch to the “Configure Instruments” tab.<br />
+Here all the available instruments are listed as well as the number of instances (so ‘actual’ instruments) you have added of the installed instrument type.<br />
+For this  select the instrument type you want to add and click the ➕ symbol under <code class="docutils literal notranslate"><span class="pre">Configure</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/img_41.png"><img alt="../../_images/img_41.png" src="../../_images/img_41.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="../../_images/img_51.png"><img alt="../../_images/img_51.png" src="../../_images/img_51.png" style="width: 49%;" /></a>
+<p>After adding the instrument a new instance of this instrument type is created. You can add as many instances of instruments as you like by  pushing the ➕ symbol. This adds additional tabs with the <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">name</span></code> you gave the instrument. By default, the naming  increments a number after the device name.</p>
+</section>
+<section id="change-instrument-settings">
+<h2>3. Change Instrument Settings<a class="headerlink" href="#change-instrument-settings" title="Permalink to this heading"></a></h2>
+<p>You can then change the instrument settings as you wish.<br />
+You can add a plain text description of the instrument and what you are planning to do with it. This is added to the <strong>metadata</strong> of your measurement when the instrument is used. This can help you better understand what the instrument does for larger project and allows others to better understand your measurement data.</p>
+<a class="reference internal image-reference" href="../../_images/img_61.png"><img alt="../../_images/img_61.png" src="../../_images/img_61.png" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="../../_images/img_7.png"><img alt="../../_images/img_7.png" src="../../_images/img_7.png" style="width: 49%;" /></a>
+<hr class="docutils" />
+<p>When you are happy with the instruments settings and have added all the instruments required for your measurements you can  click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to save all the instruments and settings to CAMELS.</p>
+</section>
+<hr class="docutils" />
+<section id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading"></a></h2>
+<p>After adding at least one instrument to CAMELS you now have two ways to control the instrument:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="quick_start_protocols.html"><span class="std std-doc"><em>Measurement Protocols</em></span></a><br />
+Use it for measurement procedures. How to set up and use protocols is explained on this page.</p></li>
+<li><p><a class="reference external" href="https://fau-lap.github.io/NOMAD-CAMELS/docs/Tutorials/quick_start/quick_start_manual_control.html"><em>Manual Control</em></a><br />
+Manually change and control individual channels. This is useful for controlling stages without having to create a protocol. How to use this functionality is explained in more detail <a class="reference external" href="https://fau-lap.github.io/NOMAD-CAMELS/docs/Tutorials/quick_start/quick_start_manual_control.html">here</a>.
+<img alt="img_8.png" src="../../_images/img_8.png" /></p></li>
+</ol>
+<p><a class="reference internal" href="#installation-and-configuration-of-a-demo-instrument"><span class="xref myst">⇧ Back to the top ⇧</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

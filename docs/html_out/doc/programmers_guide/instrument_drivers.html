@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOMAD-CAMELS Instrument Drivers &mdash; NOMAD-CAMELS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/CAMELS.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NOMAD-CAMELS
+              <img src="../../_static/camels_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NOMAD-CAMELS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NOMAD-CAMELS Instrument Drivers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/doc/programmers_guide/instrument_drivers.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nomad-camels-instrument-drivers">
+<h1>NOMAD-CAMELS Instrument Drivers<a class="headerlink" href="#nomad-camels-instrument-drivers" title="Permalink to this heading"></a></h1>
+<p>{: .no_toc }
+This page should help you create new instrument drivers that can be used in NOMAD-CAMELS.</p>
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+</section>
+<section id="local-instrument-drivers">
+<h1>Local Instrument Drivers<a class="headerlink" href="#local-instrument-drivers" title="Permalink to this heading"></a></h1>
+<p>You can create and use local instrument drivers by creating this kind of folder structure</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nomad_camels_driver_&lt;parent_driver_name&gt; (contains the actual device communication files)
+└─&gt; &lt;parent_driver_name&gt;.py
+└─&gt; &lt;parent_driver_name&gt;_ophyd.py
+</pre></div>
+</div>
+<p>and giving the path to the parent folder in the CAMELS settings.</p>
+<p>CAMELS then searches the given path for folder starting with <code class="docutils literal notranslate"><span class="pre">nomad_camels_driver_</span></code> and extracts the device name from the text following this.<br />
+For more details on how the .py and ophyd.py files should look like you can go to the code examples in <a class="reference internal" href="#12-python-files"><span class="xref myst">Section 1.2.</span></a></p>
+<section id="file-templates">
+<h2>File Templates<a class="headerlink" href="#file-templates" title="Permalink to this heading"></a></h2>
+<p>You can find templates for a new instrument driver <a class="reference external" href="https://github.com/FAU-LAP/CAMELS_drivers/tree/main/empty_instrument_driver">here</a>.</p>
+<hr class="docutils" />
+<section id="advanced-driver-information">
+<h3>Advanced Driver Information<a class="headerlink" href="#advanced-driver-information" title="Permalink to this heading"></a></h3>
+<p><strong>Regarding the <code class="docutils literal notranslate"><span class="pre">*.py</span></code> file.</strong></p>
+<p>It should include a class <code class="docutils literal notranslate"><span class="pre">subclass</span></code> which inherits from <code class="docutils literal notranslate"><span class="pre">main_classes.device_class.Device</span></code>.
+The arguments here should be set in the <strong>init</strong> by the subclass (following) the documentation of the Device class.
+For most devices, nothing further should be necessary in this class.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">subclass_config</span></code>, inheriting from <code class="docutils literal notranslate"><span class="pre">main_classes.device_class.Device_Config</span></code> should provide the necessary configuration for the device and put this information into the device’s <code class="docutils literal notranslate"><span class="pre">config</span></code>, <code class="docutils literal notranslate"><span class="pre">settings</span></code> and <code class="docutils literal notranslate"><span class="pre">ioc_settings</span></code> attributes.</p>
+<p><strong>Regarding the <code class="docutils literal notranslate"><span class="pre">*ophyd.py</span></code> file.</strong></p>
+<p>This should include a class (meaningfully named) inheriting from <code class="docutils literal notranslate"><span class="pre">ophyd.Device</span></code>.
+Here you may set all the components the device has. <br />
+Components that are created with kind=’normal’ (or not specified) will appear as channels inside CAMELS. Channels can be set and read and are the main way CAMELS communicates with devices during measurements. <br />
+Components with kind=’config’ should be part of the configuration-widget.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="writing-new-instrument-drivers-for-pypi">
+<h1>Writing New Instrument Drivers for PyPi<a class="headerlink" href="#writing-new-instrument-drivers-for-pypi" title="Permalink to this heading"></a></h1>
+<p>Every instrument driver should be an individual <a class="reference external" href="https://pypi.org/">PyPi</a> package.<br />
+It is possible to create drivers that are only available locally for you.</p>
+<blockquote>
+<div><p>⚠
+Currently the drivers are located in <a class="reference external" href="https://testPyPi.org/">testPyPi.org</a>. ⚠<br />
+This will be changed to <a class="reference external" href="https://PyPi.org/">PyPi.org</a> once the devices are stable.</p>
+</div></blockquote>
+<p>The source code of each driver can be found in <a class="reference external" href="https://github.com/FAU-LAP/CAMELS_drivers">this repository</a>.</p>
+<section id="folder-structure">
+<h2>1. Folder structure<a class="headerlink" href="#folder-structure" title="Permalink to this heading"></a></h2>
+<p>The driver should have the following folder structure</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;parent_driver_name&gt;
+└─&gt; dist (this is automatically created by python -m build)
+    └─&gt; nomad_camels_driver_&lt;parent_driver_name&gt;-X.Y.Z.tar.gz
+    └─&gt; nomad_camels_driver_&lt;parent_driver_name&gt;-X.Y.Z-py3-none-any.whl
+└─&gt; nomad_camels_driver_&lt;parent_driver_name&gt; (contains the actual device communication files)
+    └─&gt; &lt;parent_driver_name&gt;.py
+    └─&gt; &lt;parent_driver_name&gt;_ophyd.py
+└─&gt; LICENSE.txt
+└─&gt; pyproject.toml
+└─&gt; README.md
+</pre></div>
+</div>
+<p>The most important files are the <code class="docutils literal notranslate"><span class="pre">&lt;parent_driver_name&gt;.py</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;parent_driver_name&gt;_ophyd.py</span></code> files. The first one contains everything that is needed by the NOMAD-CAMELS GUI. The latter contains the class that is actually used for communicating with the device.<br />
+The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file contains most of the relevant information concerning the package that will be uploaded to PyPi (<a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/quickstart.html">see here for more information</a>).<br />
+⚠ Most importantly the project name and version must be set in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
+<hr class="docutils" />
+<details>
+  <summary>Code example: pyproject.toml file for the  Keithley 237</summary>
+<p>{% highlight toml %}
+[build-system]
+requires = [“setuptools&gt;=61.0”]
+build-backend = “setuptools.build_meta”</p>
+<p>[project]
+name = “nomad_camels_driver_keithley_237”
+version = “0.1.4”
+authors = [
+{ name=”FAIRmat - HU Berlin”, email=”nomad-camels&#64;fau.de” }
+]
+description = “Device driver for the Keithley 237 SMU.”
+readme = “README.md”
+requires-python = “&gt;=3.9.6”
+classifiers = [
+“Programming Language :: Python :: 3”,
+“License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)”,
+“Operating System :: Microsoft :: Windows”,
+]
+dependencies = [
+“pyvisa”,
+]
+[project.urls]
+“GitHub Page” = “https://github.com/FAU-LAP/NOMAD-CAMELS”
+“Documentation” = “https://fau-lap.github.io/NOMAD-CAMELS/”
+{% endhighlight %}</p>
+</details>
+</section>
+<hr class="docutils" />
+<section id="python-files">
+<h2>2. Python files<a class="headerlink" href="#python-files" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;parent_driver_name&gt;.py</span></code> file contains information about the possible instrument configurations and settings. This can be for example the current compliance of a voltage source or the integration time of a digital multimeter.</p>
+<section id="simple-device-configurations">
+<h3>2.2.1 Simple Device Configurations<a class="headerlink" href="#simple-device-configurations" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><p>⚠ For <strong>simple instruments</strong> with only a <strong>few settings</strong> you do not need to write your own GUI for the settings but CAMELS can auto-generate the UI for you. <br />
+An example file is displayed below:</p>
+</div></blockquote>
+<hr class="docutils" />
+<details>
+  <summary>Code example: Use the auto-generated UI for instrument settings (for Keithley 237)</summary>
+<p>{% highlight python %}
+from nomad_camels_driver_keithley_237.keithley_237_ophyd import Keithley_237 # Change this line!
+from nomad_camels.main_classes import device_class</p>
+<p>class subclass(device_class.Device):
+def <strong>init</strong>(self, **kwargs):
+# You can search for individual tags in the NOMAD-CAMELS GUI
+super().<strong>init</strong>(name=’keithley_237’, virtual=False, tags=[‘DMM’, ‘voltage’, ‘current’,],<br />
+directory=’keithley_237’, ophyd_device=Keithley_237,
+ophyd_class_name=’Keithley_237’, **kwargs)
+# These are the default values of the configuration settings<br />
+self.config[‘Four_wire’] = False
+self.config[‘Averages’] = “1”
+self.config[‘Integration_time’] = “20ms”
+self.config[‘Current_compliance_range’] = “Auto”
+self.config[‘Current_compliance’] = 1e-6
+self.config[‘Voltage_compliance_range’] = “Auto”
+self.config[‘Voltage_compliance’] = 10
+self.config[‘Bias_delay’] = 0
+self.config[‘Source_Type’] = “Voltage”
+self.config[‘Sweep_Hysteresis’] = False</p>
+</section>
+</section>
+</section>
+<section id="this-adds-a-simple-gui-of-the-configuration-settings-that-you-add-below">
+<h1>This adds a simple GUI of the configuration settings that you add below.<a class="headerlink" href="#this-adds-a-simple-gui-of-the-configuration-settings-that-you-add-below" title="Permalink to this heading"></a></h1>
+</section>
+<section id="this-way-you-do-not-need-to-write-our-own-gui-for-the-instrument-settings">
+<h1>This way you do NOT need to write our own GUI for the instrument settings.<a class="headerlink" href="#this-way-you-do-not-need-to-write-our-own-gui-for-the-instrument-settings" title="Permalink to this heading"></a></h1>
+</section>
+<section id="this-can-be-used-for-simple-instruments-with-only-a-few-settings">
+<h1>This can be used for simple instruments with only a few settings.<a class="headerlink" href="#this-can-be-used-for-simple-instruments-with-only-a-few-settings" title="Permalink to this heading"></a></h1>
+</section>
+<section id="for-more-complicated-instruments-with-e-g-multiple-channels-it-might-be-necessary-to-write-a-more-advanced-gui">
+<h1>For more complicated instruments (with e.g. multiple channels) it might be necessary to write a more advanced GUI<a class="headerlink" href="#for-more-complicated-instruments-with-e-g-multiple-channels-it-might-be-necessary-to-write-a-more-advanced-gui" title="Permalink to this heading"></a></h1>
+<p>class subclass_config(device_class.Simple_Config):
+def <strong>init</strong>(self, parent=None, data=’’, settings_dict=None,
+config_dict=None, ioc_dict=None, additional_info=None):
+# Each dictionary entry become a combo box with the values ad drop down optins
+comboBoxes = {‘Source_Type’: [“Voltage”, “Current”, “Sweep Voltage”, “Sweep Current”],
+‘Current_compliance_range’: [“Auto”, “1nA”, “10nA”, “100nA”, “1uA”,
+“10uA”, “100uA”, “1mA”, “10mA”, “100mA”],
+‘Voltage_compliance_range’: [“Auto”, “1.1V”, “11V”, “110V”, “1100V”],
+“Averages”: [“1”, “2”, “4”, “8”, “16”, “32”],
+‘Integration_time’: [“20ms”, “4ms”, “0.4ms”],
+}
+# Creates text fields in to which the user can write.
+# It knows what type of field (bool, number, …) it is from the default value above.
+labels = {‘Source_Type’: ‘Source type’,
+‘Current_compliance_range’: ‘Compliance range (A)’,
+‘Voltage_compliance_range’: ‘Compliance range (V)’,
+‘Integration_time’: ‘Integration time’,
+‘Four_wire’: ‘Four wire’,
+‘Current_compliance’: ‘Current compliance’,
+‘Voltage_compliance’: ‘Voltage compliance’,
+‘Bias_delay’: ‘Bias delay’,
+‘Sweep_Hysteresis’: ‘Sweep Hysteresis’,
+}
+super().<strong>init</strong>(parent, ‘Keithley 237’, data, settings_dict,
+config_dict, ioc_dict, additional_info, comboBoxes=comboBoxes, labels=labels)
+self.comboBox_connection_type.addItem(‘Local VISA’)
+self.load_settings()
+{% endhighlight %}</p>
+</details>
+<hr class="docutils" />
+<section id="complex-device-configurations">
+<h2>2.2.2 Complex Device Configurations<a class="headerlink" href="#complex-device-configurations" title="Permalink to this heading"></a></h2>
+<p>If the instrument is more complex CAMELS can not auto generate the UI anymore. Here you need to write your own UI using for example QT Designer. The first three class definitions are relevant for this.</p>
+<hr class="docutils" />
+<details>
+  <summary>Code example: Use your own UI file to create settings for your instrument (for Andor Shamrock spectrograph)</summary>
+<p>{% highlight python %}
+from CAMELS.main_classes import device_class
+from .andor_shamrock_500_config import Ui_andor_shamrock500_config
+from .andor_shamrock_500_ophyd import Andor_Shamrock_500
+from PySide6.QtWidgets import QTabWidget</p>
+<p>class subclass(device_class.Device):
+def <strong>init</strong>(self, **kwargs):
+super().<strong>init</strong>(name=’andor_shamrock_500’, virtual=False,
+tags=[ ‘spectrometer’, ‘spectrum’, ‘Andor’,],
+directory=’andor_shamrock_500’, ophyd_device=Andor_Shamrock_500,
+ophyd_class_name=’Andor_Shamrock_500’, **kwargs)</p>
+<p>class subclass_config(device_class.Device_Config):
+def <strong>init</strong>(self, parent=None, data=’’, settings_dict=None, config_dict=None, additional_info=None, **kwargs):
+super().<strong>init</strong>(parent, ‘Andor Shamrock 500’, data, settings_dict=settings_dict, config_dict=config_dict, additional_info=additional_info, no_ioc_connection=True, **kwargs)
+self.comboBox_connection_type.addItem(‘Windows dll’)
+# self.comboBox_connection_type.addItem(‘Local VISA’)
+self.tab_widget = QTabWidget()
+conf1 = {}
+for key, val in config_dict.items():
+if key.endswith(‘1’):
+conf1[key[:-1]] = val
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Here you add your own UI as a tab widget. This is the key part !!!!!<br />
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+self.channel_widge_1 = subclass_config_sub(config_dict=conf1, parent=parent, settings_dict=settings_dict)
+self.tab_widget.addTab(self.channel_widge_1, ‘Settings’)
+self.layout().addWidget(self.tab_widget, 20, 0, 1, 5)
+self.load_settings()</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def get_config(self):
+    conf1 = self.channel_widge_1.get_config()
+    for key, val in conf1.items():
+        self.config_dict[f&#39;{key}1&#39;] = val
+    return super().get_config()
+</pre></div>
+</div>
+</section>
+</section>
+<section id="this-inherits-from-your-ui-and-is-used-above-to-create-the-tab-widget-with-all-the-settings-you-implemented">
+<h1>This inherits from your UI and is used above to create the tab widget with all the settings you implemented.<a class="headerlink" href="#this-inherits-from-your-ui-and-is-used-above-to-create-the-tab-widget-with-all-the-settings-you-implemented" title="Permalink to this heading"></a></h1>
+<p>class subclass_config_sub(device_class.Device_Config_Sub, Ui_andor_shamrock500_config):
+def <strong>init</strong>(self, config_dict=None, parent=None, settings_dict=None):
+super().<strong>init</strong>(parent=parent, config_dict=config_dict,
+settings_dict=settings_dict)
+self.setupUi(self)
+if ‘set_grating_number’ in self.config_dict:
+self.set_grating_number.setValue(self.config_dict[‘set_grating_number’])
+if ‘initial_wavelength’ in self.config_dict:
+self.initial_wavelength.setValue(self.config_dict[‘initial_wavelength’])
+if ‘input_port’ in self.config_dict:
+self.input_port.setCurrentText(self.config_dict[‘input_port’])
+if ‘output_port’ in self.config_dict:
+self.output_port.setCurrentText(self.config_dict[‘output_port’])
+if ‘select_camera’ in self.config_dict:
+self.select_camera.setCurrentText(self.config_dict[‘select_camera’])
+if ‘input_slit_size’ in self.config_dict:
+self.input_slit_size.setValue(self.config_dict[‘input_slit_size’])
+if ‘output_slit_size’ in self.config_dict:
+self.output_slit_size.setValue(self.config_dict[‘output_slit_size’])</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def get_config(self):
+    self.config_dict[&#39;set_grating_number&#39;] = self.set_grating_number.value()
+    self.config_dict[&#39;initial_wavelength&#39;] = self.initial_wavelength.value()
+    self.config_dict[&#39;input_port&#39;] = self.input_port.currentText()
+    self.config_dict[&#39;output_port&#39;] = self.output_port.currentText()
+    self.config_dict[&#39;select_camera&#39;] = self.select_camera.currentText()
+    self.config_dict[&#39;input_slit_size&#39;] = self.input_slit_size.value()
+    self.config_dict[&#39;output_slit_size&#39;] = self.output_slit_size.value()
+    return super().get_config()
+</pre></div>
+</div>
+<p>{% endhighlight %}</p>
+</details>
+<hr class="docutils" />
+<p>Here is a more complex example which creates settings for two channels of a single instrument.</p>
+<details>
+  <summary>Code example: Two separate channels (for Keysight 2912)</summary>
+<p>{% highlight python %}
+from nomad_camels.main_classes import device_class
+from keysight_b2912.keysight_b2912_channel_config import Ui_B2912_channel # You need to import the created UI file
+from keysight_b2912.keysight_b2912_ophyd import Keysight_B2912 # Import the actual device communication
+from PySide6.QtWidgets import QTabWidget</p>
+</section>
+<section id="default-settings-of-the-instrument">
+<h1>Default settings of the instrument<a class="headerlink" href="#default-settings-of-the-instrument" title="Permalink to this heading"></a></h1>
+<p>default_settings = {‘source’: ‘Voltage’,
+‘source_range’: ‘2E-1 V’,
+‘range_lower_lim’: ‘2E-1 V’,
+‘source_auto’: True,
+‘low_terminal’: ‘Ground’,
+‘current_auto_mode’: True,
+‘current_lower_lim’: ‘1E-8 A’,
+‘current_range’: ‘1E-8 A’,
+‘voltage_range’: ‘2E-1 V’,
+‘voltage_auto_mode’: True,
+‘voltage_lower_lim’: ‘2E-1 V’,
+‘resistance_range’: ‘2 Ohm’,
+‘resistance_upper_lim’: ‘200E6 Ohm’,
+‘output_protection’: False,
+‘four_wire_meas’: False,
+‘current_auto_range’: True,
+‘voltage_auto_range’: True,
+‘resistance_auto_range’: True,
+‘resistance_compensation’: False,
+‘voltage_compliance’: 2,
+‘current_compliance’: 2,
+‘NPLC’: 1}</p>
+</section>
+<section id="similar-to-the-simple-device">
+<h1>Similar to the simple device<a class="headerlink" href="#similar-to-the-simple-device" title="Permalink to this heading"></a></h1>
+<p>class subclass(device_class.Device):
+def <strong>init</strong>(self, **kwargs):
+super().<strong>init</strong>(name=’keysight_b2912’, virtual=False, tags=[‘SMU’, ‘voltage’, ‘current’, ‘resistance’], directory=’keysight_b2912’, ophyd_device=Keysight_B2912, ophyd_class_name=’Keysight_B2912’, **kwargs)
+# This sets the default settings for each channel
+for key, val in default_settings.items():
+self.config[f’{key}1’] = val
+self.config[f’{key}2’] = val</p>
+<p>class subclass_config(device_class.Device_Config):
+def <strong>init</strong>(self, parent=None, data=’’, settings_dict=None, config_dict=None, additional_info=None, **kwargs):
+super().<strong>init</strong>(parent, ‘Keysight B2912’, data, settings_dict=settings_dict, config_dict=config_dict, additional_info=additional_info, no_ioc_connection=True, **kwargs)
+self.comboBox_connection_type.addItem(‘Local VISA’)
+self.tab_widget = QTabWidget()
+conf1 = {}
+conf2 = {}
+for key, val in config_dict.items():
+if key.endswith(‘1’):
+conf1[key[:-1]] = val
+elif key.endswith(‘2’):
+conf2[key[:-1]] = val
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Here you add your own UI as a tab widget. This is the key part !!!!!<br />
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+self.channel_widge_1 = subclass_config_sub(config_dict=conf1, parent=parent, settings_dict=settings_dict)
+self.channel_widge_2 = subclass_config_sub(config_dict=conf2, parent=parent, settings_dict=settings_dict)
+self.tab_widget.addTab(self.channel_widge_1, ‘Channel 1’)
+self.tab_widget.addTab(self.channel_widge_2, ‘Channel 2’)
+self.layout().addWidget(self.tab_widget, 20, 0, 1, 5)
+self.load_settings()</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def get_config(self):
+    conf1 = self.channel_widge_1.get_config()
+    conf2 = self.channel_widge_2.get_config()
+    for key, val in conf1.items():
+        self.config_dict[f&#39;{key}1&#39;] = val
+    for key, val in conf2.items():
+        self.config_dict[f&#39;{key}2&#39;] = val
+    return super().get_config()
+</pre></div>
+</div>
+</section>
+<section id="this-inherits-from-the-ui-class-you-wrote-for-the-ui-config-settings-of-the-instrument">
+<h1>This inherits from the UI class you wrote for the UI config settings of the instrument<a class="headerlink" href="#this-inherits-from-the-ui-class-you-wrote-for-the-ui-config-settings-of-the-instrument" title="Permalink to this heading"></a></h1>
+<p>class subclass_config_sub(device_class.Device_Config_Sub, Ui_B2912_channel):
+def <strong>init</strong>(self, config_dict=None, parent=None, settings_dict=None):
+super().<strong>init</strong>(parent=parent, config_dict=config_dict,
+settings_dict=settings_dict)
+self.setupUi(self)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    self.sources = [&#39;Voltage&#39;, &#39;Current&#39;]
+    self.comboBox_source.addItems(self.sources)
+    if &#39;source&#39; in config_dict and config_dict[&#39;source&#39;] in self.sources:
+        self.comboBox_source.setCurrentText(config_dict[&#39;source&#39;])
+
+    self.low_terminals = [&#39;Ground&#39;, &#39;Float&#39;]
+    self.comboBox_low_terminal.addItems(self.low_terminals)
+    if &#39;low_terminal&#39; in config_dict and config_dict[&#39;low_terminal&#39;] in self.low_terminals:
+        self.comboBox_low_terminal.setCurrentText(config_dict[&#39;source&#39;])
+
+    self.ranges_voltage = [&#39;2E-1 V&#39;, &#39;2 V&#39;, &#39;20 V&#39;, &#39;200 V&#39;]
+    self.ranges_current = [&#39;1E-8 A&#39;, &#39;1E-7 A&#39;, &#39;1E-6 A&#39;, &#39;1E-5 A&#39;, &#39;1E-4 A&#39;, &#39;1E-3 A&#39;, &#39;1E-2 A&#39;, &#39;1E-1 A&#39;, &#39;1 A&#39;, &#39;1.5 A&#39;, &#39;3 A&#39;, &#39;10 A&#39;]
+    self.ranges_resistance = [&#39;2 Ohm&#39;, &#39;20 Ohm&#39;, &#39;200 Ohm&#39;, &#39;2E3 Ohm&#39;, &#39;20E3 Ohm&#39;, &#39;200E3 Ohm&#39;, &#39;2E6 Ohm&#39;, &#39;20E6 Ohm&#39;, &#39;200E6 Ohm&#39;]
+
+    if &#39;source_auto&#39; in self.config_dict:
+        self.checkBox_source_auto.setChecked(self.config_dict[&#39;source_auto&#39;])
+    else:
+        self.checkBox_source_auto.setChecked(True)
+
+    self.load_source_options()
+    self.checkBox_source_auto.clicked.connect(self.load_source_options)
+    self.comboBox_source.currentTextChanged.connect(self.load_source_options)
+
+    if &#39;output_protection&#39; in config_dict:
+        self.checkBox_output_protection.setChecked(config_dict[&#39;output_protection&#39;])
+    if &#39;current_compliance&#39; in config_dict:
+        self.lineEdit_current_compliance.setText(str(config_dict[&#39;current_compliance&#39;]))
+    else:
+        self.lineEdit_current_compliance.setText(&#39;0.1&#39;)
+    if &#39;voltage_compliance&#39; in config_dict:
+        self.lineEdit_voltage_compliance.setText(str(config_dict[&#39;voltage_compliance&#39;]))
+    else:
+        self.lineEdit_voltage_compliance.setText(&#39;2&#39;)
+
+    if &#39;NPLC&#39; in config_dict:
+        self.lineEdit_NPLC.setText(str(config_dict[&#39;NPLC&#39;]))
+    else:
+        self.lineEdit_NPLC.setText(&#39;1&#39;)
+
+    if &#39;four_wire_meas&#39; in config_dict:
+        self.checkBox_four_wire_meas.setChecked(config_dict[&#39;four_wire_meas&#39;])
+    if &#39;current_auto_range&#39; in config_dict:
+        self.checkBox_current_auto_range.setChecked(config_dict[&#39;current_auto_range&#39;])
+    if &#39;voltage_auto_range&#39; in config_dict:
+        self.checkBox_voltage_auto_range.setChecked(config_dict[&#39;voltage_auto_range&#39;])
+    if &#39;resistance_auto_range&#39; in config_dict:
+        self.checkBox_resistance_auto_range.setChecked(config_dict[&#39;resistance_auto_range&#39;])
+    if &#39;resistance_compensation&#39; in config_dict:
+        self.checkBox_resistance_compensation.setChecked(config_dict[&#39;resistance_compensation&#39;])
+
+    auto_range_modes = [&#39;Normal&#39;, &#39;Resolution&#39;, &#39;Speed&#39;]
+    self.comboBox_voltage_auto_mode.addItems(auto_range_modes)
+    self.comboBox_current_auto_mode.addItems(auto_range_modes)
+    if &#39;voltage_auto_mode&#39; in config_dict and config_dict[&#39;voltage_auto_mode&#39;] in auto_range_modes:
+        self.comboBox_voltage_auto_mode.setCurrentText(config_dict[&#39;voltage_auto_mode&#39;])
+    if &#39;current_auto_mode&#39; in config_dict and config_dict[&#39;current_auto_mode&#39;] in auto_range_modes:
+        self.comboBox_current_auto_mode.setCurrentText(config_dict[&#39;current_auto_mode&#39;])
+
+    self.comboBox_current_lower_lim.addItems(self.ranges_current)
+    if &#39;current_lower_lim&#39; in self.config_dict and self.config_dict[&#39;current_lower_lim&#39;] in self.ranges_current:
+        self.comboBox_current_lower_lim.setCurrentText(self.config_dict[&#39;current_lower_lim&#39;])
+    self.comboBox_current_range.addItems(self.ranges_current)
+    if &#39;current_range&#39; in self.config_dict and self.config_dict[&#39;current_range&#39;] in self.ranges_current:
+        self.comboBox_current_range.setCurrentText(self.config_dict[&#39;current_range&#39;])
+    self.comboBox_voltage_lower_lim.addItems(self.ranges_voltage)
+    if &#39;voltage_lower_lim&#39; in self.config_dict and self.config_dict[&#39;voltage_lower_lim&#39;] in self.ranges_voltage:
+        self.comboBox_voltage_lower_lim.setCurrentText(self.config_dict[&#39;voltage_lower_lim&#39;])
+    self.comboBox_voltage_range.addItems(self.ranges_voltage)
+    if &#39;voltage_range&#39; in self.config_dict and self.config_dict[&#39;voltage_range&#39;] in self.ranges_voltage:
+        self.comboBox_voltage_range.setCurrentText(self.config_dict[&#39;voltage_range&#39;])
+    self.comboBox_resistance_range.addItems(self.ranges_resistance)
+    if &#39;resistance_range&#39; in self.config_dict and self.config_dict[&#39;resistance_range&#39;] in self.ranges_resistance:
+        self.comboBox_resistance_range.setCurrentText(self.config_dict[&#39;resistance_range&#39;])
+    self.comboBox_resistance_upper_lim.addItems(self.ranges_resistance)
+    if &#39;resistance_upper_lim&#39; in self.config_dict and self.config_dict[&#39;resistance_upper_lim&#39;] in self.ranges_resistance:
+        self.comboBox_resistance_upper_lim.setCurrentText(self.config_dict[&#39;resistance_upper_lim&#39;])
+
+
+def load_source_options(self):
+    src_v = True
+    if self.comboBox_source.currentText() == &#39;Current&#39;:
+        src_v = False
+    auto_source = self.checkBox_source_auto.isChecked()
+    self.comboBox_source_range.clear()
+    self.comboBox_range_lower_lim.clear()
+    if src_v:
+        self.comboBox_source_range.addItems(self.ranges_voltage)
+        self.comboBox_range_lower_lim.addItems(self.ranges_voltage)
+        if &#39;source_range&#39; in self.config_dict and self.config_dict[&#39;source_range&#39;] in self.ranges_voltage:
+            self.comboBox_source_range.setCurrentText(self.config_dict[&#39;source_range&#39;])
+        if &#39;range_lower_lim&#39; in self.config_dict and self.config_dict[&#39;range_lower_lim&#39;] in self.ranges_voltage:
+            self.comboBox_range_lower_lim.setCurrentText(self.config_dict[&#39;range_lower_lim&#39;])
+    else:
+        self.comboBox_source_range.addItems(self.ranges_current)
+        self.comboBox_range_lower_lim.addItems(self.ranges_current)
+        if &#39;source_range&#39; in self.config_dict and self.config_dict[&#39;source_range&#39;] in self.ranges_current:
+            self.comboBox_source_range.setCurrentText(self.config_dict[&#39;source_range&#39;])
+        if &#39;range_lower_lim&#39; in self.config_dict and self.config_dict[&#39;range_lower_lim&#39;] in self.ranges_current:
+            self.comboBox_range_lower_lim.setCurrentText(self.config_dict[&#39;range_lower_lim&#39;])
+    self.comboBox_source_range.setEnabled(not auto_source)
+    self.comboBox_range_lower_lim.setEnabled(auto_source)
+
+
+def get_config(self):
+    self.config_dict[&#39;source&#39;] = self.comboBox_source.currentText()
+    self.config_dict[&#39;low_terminal&#39;] = self.comboBox_low_terminal.currentText()
+    self.config_dict[&#39;source_range&#39;] = self.comboBox_source_range.currentText()
+    self.config_dict[&#39;range_lower_lim&#39;] = self.comboBox_range_lower_lim.currentText()
+    self.config_dict[&#39;current_auto_mode&#39;] = self.comboBox_current_auto_mode.currentText()
+    self.config_dict[&#39;current_lower_lim&#39;] = self.comboBox_current_lower_lim.currentText()
+    self.config_dict[&#39;current_range&#39;] = self.comboBox_current_range.currentText()
+    self.config_dict[&#39;voltage_range&#39;] = self.comboBox_voltage_range.currentText()
+    self.config_dict[&#39;voltage_auto_mode&#39;] = self.comboBox_voltage_auto_mode.currentText()
+    self.config_dict[&#39;voltage_lower_lim&#39;] = self.comboBox_voltage_lower_lim.currentText()
+    self.config_dict[&#39;resistance_range&#39;] = self.comboBox_resistance_range.currentText()
+    self.config_dict[&#39;resistance_upper_lim&#39;] = self.comboBox_resistance_upper_lim.currentText()
+    self.config_dict[&#39;source_auto&#39;] = self.checkBox_source_auto.isChecked()
+    self.config_dict[&#39;output_protection&#39;] = self.checkBox_output_protection.isChecked()
+    self.config_dict[&#39;four_wire_meas&#39;] = self.checkBox_four_wire_meas.isChecked()
+    self.config_dict[&#39;current_auto_range&#39;] = self.checkBox_current_auto_range.isChecked()
+    self.config_dict[&#39;voltage_auto_range&#39;] = self.checkBox_voltage_auto_range.isChecked()
+    self.config_dict[&#39;resistance_auto_range&#39;] = self.checkBox_resistance_auto_range.isChecked()
+    self.config_dict[&#39;resistance_compensation&#39;] = self.checkBox_resistance_compensation.isChecked()
+    self.config_dict[&#39;current_compliance&#39;] = float(self.lineEdit_current_compliance.text())
+    self.config_dict[&#39;voltage_compliance&#39;] = float(self.lineEdit_voltage_compliance.text())
+    self.config_dict[&#39;NPLC&#39;] = float(self.lineEdit_NPLC.text())
+    return super().get_config()
+</pre></div>
+</div>
+<p>{% endhighlight %}</p>
+</details>
+<hr class="docutils" />
+<section id="building-the-instrument-package">
+<h2>3. Building the Instrument Package<a class="headerlink" href="#building-the-instrument-package" title="Permalink to this heading"></a></h2>
+<p>To create a new package that can be installed via pip from PyPi or testPyPi follow these steps.</p>
+<ol class="arabic">
+<li><p>Make sure you have <code class="docutils literal notranslate"><span class="pre">build</span></code> and <code class="docutils literal notranslate"><span class="pre">twine</span></code> installed into your python environment with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">build</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">twine</span></code></p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">&lt;parent_driver_name&gt;</span></code> directory of the driver. So the parent directory containing the pyproject.toml</p></li>
+<li><p>Set the correct version number and metadata in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file</p></li>
+<li><p>Run the build command : <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">build</span></code>. This creates the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder and the distributions to upload to PyPi</p></li>
+<li><p>Upload to testPyPi (PyPi) with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m twine upload --repository testpypi dist/nomad*</span>
+</pre></div>
+</div>
+<p>⚠ Change the repository used after the <code class="docutils literal notranslate"><span class="pre">--repository</span></code> flag to <code class="docutils literal notranslate"><span class="pre">pypi</span></code> to upload to PyPi</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="automated-build-and-upload">
+<h2>4. Automated Build and Upload<a class="headerlink" href="#automated-build-and-upload" title="Permalink to this heading"></a></h2>
+<p>You can run the following script using microsoft PowerShell in the <code class="docutils literal notranslate"><span class="pre">$rootFolder</span></code> containing multiple instrument drivers in subdirectories.<br />
+It runs the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">build</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">twine</span> <span class="pre">upload</span> <span class="pre">-r</span> <span class="pre">testpypi</span> <span class="pre">dist/nomad*</span></code> commands in each subdirectory containing a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$rootFolder</span> <span class="p">=</span> <span class="s2">&quot;C:\Path\To\Root\Folder&quot;</span>
+<span class="nb">Get-ChildItem</span> <span class="nv">$rootFolder</span> <span class="n">-Recurse</span> <span class="n">-Directory</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span><span class="p">)</span><span class="s2">\pyproject.toml&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">Push-Location</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span>
+        <span class="n">python</span> <span class="n">-m</span> <span class="n">build</span>
+        <span class="n">python</span> <span class="n">-m</span> <span class="n">twine</span> <span class="n">upload</span> <span class="n">-r</span> <span class="n">testpypi</span> <span class="n">dist</span><span class="p">/</span><span class="n">nomad</span><span class="p">*</span>
+        <span class="nb">Pop-Location</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="install-instrument-package">
+<h2>5. Install Instrument Package<a class="headerlink" href="#install-instrument-package" title="Permalink to this heading"></a></h2>
+<p>To install  run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install --no-cache-dir --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple nomad_camels_driver_&lt;parent_driver_name&gt;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">nomad_camels_driver_&lt;parent_driver_name&gt;</span></code> is the driver name you gave your folder and project.<br />
+The <code class="docutils literal notranslate"><span class="pre">--extra-index-url</span></code> flag allows dependencies to be installed from PyPi.<br />
+The <code class="docutils literal notranslate"><span class="pre">--no-cache-dir</span></code> flag prevents any locally saved NOMAD-CAMELS version to be installed instead of the most recent remote version.\</p>
+<blockquote>
+<div><p>⚠ The index-url must be changed of course when installing from PyPi ⚠</p>
+</div></blockquote>
+<hr class="docutils" />
+<p style="text-align:left;">
+  <span style="color: grey;">
+  <a href="../index.html">&larr; Back</a>
+  </span>
+  <span style="float:right;">
+    <a href="quick_start.html">Next &rarr;</a><br>
+  </span>
+</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
