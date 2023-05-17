@@ -7,6 +7,7 @@
   <title>nomad_camels.utility package &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="shortcut icon" href="_static/CAMELS.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -17,7 +18,8 @@
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="nomad_camels.ui_widgets package" href="nomad_camels.ui_widgets.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,10 +43,55 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manually_written/users_guide.html">User's Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manually_written/tutorials/quick_start.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/tutorials/quick_start.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/users_guide.html">User's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/instruments/instruments.html">Instruments</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="nomad_camels.html">nomad_camels package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="nomad_camels.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.EPICS_handling.html">nomad_camels.EPICS_handling package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.bluesky_handling.html">nomad_camels.bluesky_handling package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.commands.html">nomad_camels.commands package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.frontpanels.html">nomad_camels.frontpanels package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.gui.html">nomad_camels.gui package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.loop_steps.html">nomad_camels.loop_steps package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.main_classes.html">nomad_camels.main_classes package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.manual_controls.html">nomad_camels.manual_controls package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.tests.html">nomad_camels.tests package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.tools.html">nomad_camels.tools package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nomad_camels.ui_widgets.html">nomad_camels.ui_widgets package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">nomad_camels.utility package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.databroker_export">nomad_camels.utility.databroker_export module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.device_handling">nomad_camels.utility.device_handling module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.exception_hook">nomad_camels.utility.exception_hook module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.fit_variable_renaming">nomad_camels.utility.fit_variable_renaming module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.load_save_functions">nomad_camels.utility.load_save_functions module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.load_save_helper_functions">nomad_camels.utility.load_save_helper_functions module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.number_formatting">nomad_camels.utility.number_formatting module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.plot_placement">nomad_camels.utility.plot_placement module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.qthreads">nomad_camels.utility.qthreads module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.theme_changing">nomad_camels.utility.theme_changing module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.tqdm_progress_bar">nomad_camels.utility.tqdm_progress_bar module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.treeView_functions">nomad_camels.utility.treeView_functions module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.update_camels">nomad_camels.utility.update_camels module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility.variables_handling">nomad_camels.utility.variables_handling module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.utility">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#module-nomad_camels.CAMELS_start">nomad_camels.CAMELS_start module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#module-nomad_camels.MainApp_v2">nomad_camels.MainApp_v2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#module-nomad_camels">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -61,6 +108,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">nomad_camels</a></li>
+          <li class="breadcrumb-item"><a href="nomad_camels.html">nomad_camels package</a></li>
       <li class="breadcrumb-item active">nomad_camels.utility package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/nomad_camels.utility.rst.txt" rel="nofollow"> View page source</a>
@@ -995,7 +1044,9 @@ containing all the variables, channels, functions and operators.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nomad_camels.ui_widgets.html" class="btn btn-neutral float-left" title="nomad_camels.ui_widgets package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

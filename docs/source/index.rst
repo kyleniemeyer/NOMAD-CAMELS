@@ -13,13 +13,21 @@ https://github.com/FAU-LAP/CAMELS
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: User Documentation
 
    Home <self>
    Installation <doc/installation/installation.md>
    Tutorial <doc/tutorials/quick_start.md>
    User's Guide <doc/users_guide.md>
-   Reference <modules.rst>
+   Instruments <doc/instruments/instruments.md>
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Reference
+
+   nomad-camels <nomad_camels.rst>
+   genindex
+
 
 
 

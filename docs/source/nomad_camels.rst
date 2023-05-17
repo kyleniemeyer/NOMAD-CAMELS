@@ -1,4 +1,4 @@
-nomad\_camels package
+nomad\_camels
 =====================
 
 Subpackages

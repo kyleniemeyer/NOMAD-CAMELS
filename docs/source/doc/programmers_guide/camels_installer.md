@@ -1,21 +1,3 @@
----
-layout: default
-title: Changing CAMELS Installer
-parent: Programmer's Guide
-nav_order: 2
----
-
-
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
-
 # Changing CAMELS Installer
 Installs CAMELS software and all required packages
 
