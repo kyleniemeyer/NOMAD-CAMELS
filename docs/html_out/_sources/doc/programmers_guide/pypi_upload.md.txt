@@ -1,23 +1,5 @@
----
-layout: default
-title: Upload CAMELS to PyPi
-parent: Programmer's Guide
-nav_order: 3
----
-
-
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
-
-# Uploading a new NOMAD-CAMELS version to PyPi
-The "backbone" of creating the PyPi project is the `pyproject.toml` file located in the root directory. Here almost all important settings are configured. The dependencies on other python packages is maintained with the `requirements.txt` file. \
+# Uploading a new NOMAD-CAMELS version to PyPI
+The "backbone" of creating the PyPI project is the `pyproject.toml` file located in the root directory. Here almost all important settings are configured. The dependencies on other python packages is maintained with the `requirements.txt` file. \
 The `MANIFEST.in` file contains information about static non-python files that should be included (e.g. folders of images). 
 
 ## Upload Workflow
@@ -41,7 +23,7 @@ The `MANIFEST.in` file contains information about static non-python files that s
          |--- 'many other files ...' 
    ```
    where X.Y.Z is the version number (MAJOR.MINOR.PATCH) given in the `.toml` file. 
-3. To upload the builds to PyPi (**!currently uploads to TestPyPi as it is under development!**) run:
+3. To upload the builds to PyPI (**!currently uploads to TestPyPI as it is under development!**) run:
     ```bash
     python -m twine upload --repository testpypi dist/nomad*
     ```
@@ -56,13 +38,5 @@ To install the most recent version of NOMAD-CAMELS into your python environment 
 ```bash
     pip install --no-cache-dir --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple nomad-camels
 ```
-The `--extra-index-url` flag allows dependencies to be installed from PyPi.\
+The `--extra-index-url` flag allows dependencies to be installed from PyPI.\
 The `--no-cache-dir` flag prevents any locally saved NOMAD-CAMELS version to be installed instead of the most recent remote version. 
-<p style="text-align:left;">
-  <span style="color: grey;">
-  <a href="../index.html">&larr; Back</a>
-  </span>
-  <span style="float:right;">
-    <a href="quick_start.html">Next &rarr;</a><br>
-  </span>
-</p>

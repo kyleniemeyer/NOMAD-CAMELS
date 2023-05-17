@@ -421,16 +421,12 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         Those may contain:
         - autosave: turn on / off autosave on closing the program.
         - dark_mode: turning dark-mode on / off.
-        - number_format: the number format for display, can be either
-            "mixed", "plain" or "scientific".
-        - mixed_from: the exponent from where to switch to
-            scientific format, if number_format is "mixed".
+        - number_format: the number format for display, can be either "mixed", "plain" or "scientific".
+        - mixed_from: the exponent from where to switch to scientific format, if number_format is "mixed".
         - n_decimals: the number of displayed decimals of a number.
-        - py_files_path: the path, where python files (e.g. protocols)
-            are created.
+        - py_files_path: the path, where python files (e.g. protocols) are created.
         - meas_files_path: the path, where measurement data is stored.
-        - device_driver_path: the path, where NOMAD-CAMELS can find the
-            installed devices.
+        - device_driver_path: the path, where NOMAD-CAMELS can find the installed devices.
         - databroker_catalog_name: the name of the databroker catalog
 
         Parameters

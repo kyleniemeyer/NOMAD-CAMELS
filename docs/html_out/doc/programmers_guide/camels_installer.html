@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changing CAMELS Installer &mdash; NOMAD-CAMELS  documentation</title>
+  <title>Changing the CAMELS Installer &mdash; NOMAD-CAMELS  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
@@ -18,7 +18,9 @@
         <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Instrument Drivers" href="instrument_drivers.html" />
+    <link rel="prev" title="Programmer’s Guide" href="programmers_guide.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,14 +43,48 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/quick_start.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users_guide.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Instruments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programmers_guide.html">Programmer's Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CAMELS Installer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">1. Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-can-be-changed">2. What can be changed?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#changes-to-python-or-environment">2.1. Changes to python or environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changes-to-the-way-camels-is-started-via-shortcuts">2.2. Changes to the way CAMELS is started (via shortcuts)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changes-to-the-supporting-folders">2.3. Changes to the supporting folders</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#code-signing">3. Code Signing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-windows-signtool">3.1. Using Windows Signtool</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_drivers.html">Instrument Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypi_upload.html">PyPI Upload</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../nomad_camels.html">nomad-camels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/FAU-LAP/NOMAD-CAMELS">Find us on GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nomad-lab.eu/nomad-lab/">NOMAD Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.fairmat-nfdi.eu/fairmat">FAIRmat Website</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imprint</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.lap.physik.nat.fau.de/impressum/">Imprint/Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_privacy.html">Data Privacy</a></li>
 </ul>
 
         </div>
@@ -65,7 +101,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Changing CAMELS Installer</li>
+          <li class="breadcrumb-item"><a href="programmers_guide.html">Programmer’s Guide</a></li>
+      <li class="breadcrumb-item active">Changing the CAMELS Installer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/doc/programmers_guide/camels_installer.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -75,32 +112,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
-<section id="changing-camels-installer">
-<h1>Changing CAMELS Installer<a class="headerlink" href="#changing-camels-installer" title="Permalink to this heading"></a></h1>
-<p>Installs CAMELS software and all required packages</p>
-<p>The relevant installer <a class="reference internal" href="#/Output/NOMAD-CAMELS_installer.exe"><span class="xref myst">NOMAD-CAMELS_installer.exe</span></a>
-file is located in <a class="reference internal" href="#/Output/"><span class="xref myst">Output</span></a></p>
-<p>Visit the <a class="reference external" href="https://fau-lap.github.io/CAMELS/">CAMELS Homepage</a> for more information</p>
+  <section id="changing-the-camels-installer">
+<h1>Changing the CAMELS Installer<a class="headerlink" href="#changing-the-camels-installer" title="Permalink to this heading"></a></h1>
+<p>The installer installs the NOMAD-CAMELS software and all required packages.</p>
+<p>Find more on it at <a class="reference external" href="https://github.com/A-D-Fuchs/CAMELS_installer">its own GitHub</a>.</p>
 <section id="workflow">
 <h2>1. Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
 <p>Brief description of the workflow when the installer should be updated.</p>
 <ol class="arabic">
-<li><p>Change python code in <code class="docutils literal notranslate"><span class="pre">/Python_code/setup_camels.py</span></code> (see <a class="reference internal" href="#21-changes-to-python-or-environment"><span class="xref myst">here</span></a>)</p></li>
+<li><p>Change python code in <code class="docutils literal notranslate"><span class="pre">/Python_code/setup_camels.py</span></code> (see <a class="reference internal" href="#changes-to-python-or-environment"><span class="std std-ref">here</span></a>)</p></li>
 <li><p>Create .exe file from the python code. To do this run following code in <code class="docutils literal notranslate"><span class="pre">/Python_code/</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyinstaller<span class="w"> </span>--onefile<span class="w"> </span>--nowindow<span class="w"> </span>setup.py
 </pre></div>
 </div>
 <p>This creates the <code class="docutils literal notranslate"><span class="pre">setup_camels.exe</span></code> file under <code class="docutils literal notranslate"><span class="pre">/Python_code/dist/</span></code></p>
 </li>
-<li><p>Change <code class="docutils literal notranslate"><span class="pre">&quot;\run\runCamels.bat&quot;</span></code> to change the way CAMELS is launched (see <a class="reference internal" href="#22-changes-to-the-way-camels-is-started-via-shortcuts"><span class="xref myst">here</span></a>)</p></li>
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">&quot;\run\runCamels.bat&quot;</span></code> to change the way CAMELS is launched (see <a class="reference internal" href="#changes-to-the-way-camels-is-started-via-shortcuts"><span class="std std-ref">here</span></a>)</p></li>
 <li><p>Convert the bat file to an exe file (using for example <a class="reference external" href="https://bat-to-exe-converter-x64.de.softonic.com/">Bat To Exe Converter</a>)</p></li>
 <li><p>Open the <code class="docutils literal notranslate"><span class="pre">CAMELS_installer.iss</span></code> file and perform any required changes. Then compile the exe.<br />
 The final file <code class="docutils literal notranslate"><span class="pre">NOMAD-CAMELS_installer.exe</span></code> can be found under <code class="docutils literal notranslate"><span class="pre">/Output/</span></code></p></li>
@@ -110,13 +137,13 @@ The final file <code class="docutils literal notranslate"><span class="pre">NOMA
 <h2>2. What can be changed?<a class="headerlink" href="#what-can-be-changed" title="Permalink to this heading"></a></h2>
 <p>Brief description of the possible (and most likely) changes.</p>
 <section id="changes-to-python-or-environment">
-<h3>2.1. Changes to python or environment<a class="headerlink" href="#changes-to-python-or-environment" title="Permalink to this heading"></a></h3>
+<span id="id1"></span><h3>2.1. Changes to python or environment<a class="headerlink" href="#changes-to-python-or-environment" title="Permalink to this heading"></a></h3>
 <p>If you want to perform changed regarding the NOMAD-CAMELS version that is installed or
 changes to pyenv (python version) or the python environment then you have to perform
-changes in the python code of the <a class="reference internal" href="#/Python_code/setup_camels.py"><span class="xref myst">setup.py</span></a> file. Here the python version is currently hard-coded as <code class="docutils literal notranslate"><span class="pre">3.11.3</span></code>. The <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command uses the most current version of NOMAD-CAMELS and ignores locally available versions with <code class="docutils literal notranslate"><span class="pre">--no-cache-dir</span></code>.</p>
+changes in the python code of the <a class="reference external" href="https://github.com/A-D-Fuchs/CAMELS_installer/blob/main/Python_code/setup_camels.py">setup.py</a> file. Here the python version is currently hard-coded as <code class="docutils literal notranslate"><span class="pre">3.11.3</span></code>. The <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command uses the most current version of NOMAD-CAMELS and ignores locally available versions with <code class="docutils literal notranslate"><span class="pre">--no-cache-dir</span></code>.</p>
 </section>
 <section id="changes-to-the-way-camels-is-started-via-shortcuts">
-<h3>2.2. Changes to the way CAMELS is started (via shortcuts)<a class="headerlink" href="#changes-to-the-way-camels-is-started-via-shortcuts" title="Permalink to this heading"></a></h3>
+<span id="id2"></span><h3>2.2. Changes to the way CAMELS is started (via shortcuts)<a class="headerlink" href="#changes-to-the-way-camels-is-started-via-shortcuts" title="Permalink to this heading"></a></h3>
 <p>If you want to change the way CAMELS is startet you must modify the installation.exe file by modifying the InnoSetup file <code class="docutils literal notranslate"><span class="pre">.iss</span></code>. Here you can alter the shortcuts under <code class="docutils literal notranslate"><span class="pre">[Icons]</span></code>.
 The shortcuts execute the NOMAD-CAMELS.exe which is a simple exe convertion of the batch file <code class="docutils literal notranslate"><span class="pre">runCamels.bat</span></code>. This  reads  the <code class="docutils literal notranslate"><span class="pre">NOMAD-CAMELS.ini</span></code> and reads the paths to the exe and the installation path from it. You can change these two paths manually to change the python environment that should start CAMELS.</p>
 </section>
@@ -150,18 +177,25 @@ The installer creates the folder <code class="docutils literal notranslate"><spa
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="programmers_guide.html" class="btn btn-neutral float-left" title="Programmer’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="instrument_drivers.html" class="btn btn-neutral float-right" title="Instrument Drivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, jl.</p>
+    <p>&#169; Copyright 2021, FAIRmat.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+  
+<br><br>
+<a href="https://www.lap.physik.nat.fau.de/impressum/">Imprint</a><br>
+<a href="data_privacy.html">Data privacy statement</a>
+
 
 </footer>
         </div>

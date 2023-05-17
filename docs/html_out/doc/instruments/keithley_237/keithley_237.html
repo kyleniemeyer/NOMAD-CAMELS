@@ -19,8 +19,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="nomad_camels" href="../../../modules.html" />
-    <link rel="prev" title="Agilent 34401A - Digital Multimeter (DMM)" href="../agilent_34401a/agilent_34401a.html" /> 
+    <link rel="next" title="Keysight B2912A - Source Measure Unit (SMU)" href="../keysight_b2912a/keysight_b2912a.html" />
+    <link rel="prev" title="Keithley 2000 - Digital Multimeter (DMM)" href="../keithley_2000/keithley_2000.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +43,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">Installation</a></li>
@@ -51,6 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../users_guide.html">User's Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../instruments.html">Instruments</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../agilent_34401a/agilent_34401a.html">Agilent 34401A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../keithley_2000/keithley_2000.html">Keithley 2000</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Keithley 237</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#install">Install</a></li>
@@ -66,8 +67,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#using-internal-sweeps">Using Internal Sweeps</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#setting-up-the-sweep">Setting up the Sweep</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#sweep-parameters">Sweep Parameters</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#starting-the-sweep">Starting the Sweep</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#example-sweep-data">Example Sweep Data</a></li>
 </ul>
 </li>
@@ -75,9 +74,29 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../keysight_b2912a/keysight_b2912a.html">Keysight B2912A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../keysight_e5270b/keysight_e5270b.html">Keysight E5270B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pid/pid.html">PID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voltcraft_pps/voltcraft_pps.html">Voltcraft PPS</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmers_guide/programmers_guide.html">Programmer's Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nomad_camels.html">nomad-camels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/FAU-LAP/NOMAD-CAMELS">Find us on GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nomad-lab.eu/nomad-lab/">NOMAD Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.fairmat-nfdi.eu/fairmat">FAIRmat Website</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imprint</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.lap.physik.nat.fau.de/impressum/">Imprint/Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_privacy.html">Data Privacy</a></li>
 </ul>
 
         </div>
@@ -178,16 +197,12 @@ This is not very fast as the constant device communication has a lot of overhead
 <section id="resulting-data">
 <h5>Resulting Data<a class="headerlink" href="#resulting-data" title="Permalink to this heading"></a></h5>
 <p>Example data from such a for-loop measurement. From the recorded instrument settings (<code class="docutils literal notranslate"><span class="pre">keithley_237_Source_Type</span></code> entry) it is clear what was measured.</p>
-<details>
-  <summary>Display example data</summary>
-```{image} img_3.png
-```
-</details>
+<img alt="../../../_images/img_3.png" src="../../../_images/img_3.png" />
 </section>
 </section>
 </section>
 <section id="using-internal-sweeps">
-<h3>Using Internal Sweeps<a class="headerlink" href="#using-internal-sweeps" title="Permalink to this heading"></a></h3>
+<span id="int-sweeps"></span><h3>Using Internal Sweeps<a class="headerlink" href="#using-internal-sweeps" title="Permalink to this heading"></a></h3>
 <p>There are five different types of internal sweeps:</p>
 <ol class="arabic simple">
 <li><p>Fixed Level (<code class="docutils literal notranslate"><span class="pre">setSweep_type</span> <span class="pre">=</span> <span class="pre">0</span></code>)</p></li>
@@ -202,17 +217,16 @@ This is not very fast as the constant device communication has a lot of overhead
 <code class="docutils literal notranslate"><span class="pre">level</span></code>, <code class="docutils literal notranslate"><span class="pre">points</span></code>, <code class="docutils literal notranslate"><span class="pre">pulses</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">t_off</span></code> and <code class="docutils literal notranslate"><span class="pre">t_on</span></code>.</p>
 <section id="setting-up-the-sweep">
 <h4>Setting up the Sweep<a class="headerlink" href="#setting-up-the-sweep" title="Permalink to this heading"></a></h4>
-</section>
 <section id="sweep-parameters">
-<h4>Sweep Parameters<a class="headerlink" href="#sweep-parameters" title="Permalink to this heading"></a></h4>
+<h5>Sweep Parameters<a class="headerlink" href="#sweep-parameters" title="Permalink to this heading"></a></h5>
 <p>Before you start the sweep measurement you have to set the required parameters to the desired value in a <em>‘Set Channels step’</em>.</p>
 <p>E.g. for a linear stair sweep from <code class="docutils literal notranslate"><span class="pre">start=0</span></code> to <code class="docutils literal notranslate"><span class="pre">stop=1</span></code> with <code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">size=0.1</span></code>. <code class="docutils literal notranslate"><span class="pre">Bias</span> <span class="pre">delay</span></code> and <code class="docutils literal notranslate"><span class="pre">range</span></code> are set in the instrument config page.<br />
 ⚠ You <strong>MUST set the sweep type</strong> using the <code class="docutils literal notranslate"><span class="pre">keithley_237_setSweep_Type</span></code> channel:<br />
-Here we want the linear sweep so we set the value to <code class="docutils literal notranslate"><span class="pre">1</span></code> as this corresponds to the linear sweep (see list of 5 sweep types <a class="reference internal" href="#using-internal-sweeps"><span class="xref myst">above</span></a>)<br />
+Here we want the linear sweep so we set the value to <code class="docutils literal notranslate"><span class="pre">1</span></code> as this corresponds to the linear sweep (see list of 5 sweep types <a class="reference internal" href="#int-sweeps"><span class="std std-ref">above</span></a>)<br />
 <img alt="img_4.png" src="../../../_images/img_4.png" /></p>
 </section>
 <section id="starting-the-sweep">
-<h4>Starting the Sweep<a class="headerlink" href="#starting-the-sweep" title="Permalink to this heading"></a></h4>
+<h5>Starting the Sweep<a class="headerlink" href="#starting-the-sweep" title="Permalink to this heading"></a></h5>
 <p>Then you can start the measurement by setting the value of <code class="docutils literal notranslate"><span class="pre">keithley_237_start_sweep</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>
 <img alt="img_5.png" src="../../../_images/img_5.png" />
 and in a different step you have to start the sweep.</p>
@@ -220,13 +234,11 @@ and in a different step you have to start the sweep.</p>
 <p>To read the measured data simply read the <code class="docutils literal notranslate"><span class="pre">read_sweep</span></code> channel:
 <img alt="img_6.png" src="../../../_images/img_6.png" /></p>
 </section>
+</section>
 <section id="example-sweep-data">
 <h4>Example Sweep Data<a class="headerlink" href="#example-sweep-data" title="Permalink to this heading"></a></h4>
 <p>This produces the following data for a voltage sweep using a 15 kΩ resistor.</p>
-<details>
-  <summary>Display example data</summary>
-<img src="img_7.png"/>
-</details>
+<img alt="../../../_images/img_7.png" src="../../../_images/img_7.png" />
 <p>The first column in the data is the set value (in this case the voltage) while the second column is the measured value (current) for that voltage.
 The settings of the sweep can be read from the <code class="docutils literal notranslate"><span class="pre">protocol_overview</span></code> entry and the instrument settings.</p>
 </section>
@@ -238,20 +250,24 @@ The settings of the sweep can be read from the <code class="docutils literal not
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../agilent_34401a/agilent_34401a.html" class="btn btn-neutral float-left" title="Agilent 34401A - Digital Multimeter (DMM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../../modules.html" class="btn btn-neutral float-right" title="nomad_camels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../keithley_2000/keithley_2000.html" class="btn btn-neutral float-left" title="Keithley 2000 - Digital Multimeter (DMM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../keysight_b2912a/keysight_b2912a.html" class="btn btn-neutral float-right" title="Keysight B2912A - Source Measure Unit (SMU)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, jl.</p>
+    <p>&#169; Copyright 2021, FAIRmat.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+  
+<br><br>
+<a href="https://www.lap.physik.nat.fau.de/impressum/">Imprint</a><br>
+<a href="data_privacy.html">Data privacy statement</a>
+
 
 </footer>
         </div>

@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="nomad_camels.bluesky_handling package" href="nomad_camels.bluesky_handling.html" />
-    <link rel="prev" title="nomad_camels package" href="nomad_camels.html" /> 
+    <link rel="prev" title="nomad_camels" href="nomad_camels.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,43 +43,64 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/installation/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/tutorials/quick_start.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/users_guide.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/instruments/instruments.html">Instruments</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="nomad_camels.html">nomad_camels package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="nomad_camels.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">nomad_camels.EPICS_handling package</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.EPICS_handling.make_ioc">nomad_camels.EPICS_handling.make_ioc module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#module-nomad_camels.EPICS_handling">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/programmers_guide/programmers_guide.html">Programmer's Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="nomad_camels.html">nomad-camels</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="nomad_camels.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">nomad_camels.EPICS_handling package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-nomad_camels.EPICS_handling.make_ioc">nomad_camels.EPICS_handling.make_ioc module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#nomad_camels.EPICS_handling.make_ioc.add_to_string"><code class="docutils literal notranslate"><span class="pre">add_to_string()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nomad_camels.EPICS_handling.make_ioc.change_devices"><code class="docutils literal notranslate"><span class="pre">change_devices()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nomad_camels.EPICS_handling.make_ioc.clean_up_ioc"><code class="docutils literal notranslate"><span class="pre">clean_up_ioc()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nomad_camels.EPICS_handling.make_ioc.make_ioc"><code class="docutils literal notranslate"><span class="pre">make_ioc()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nomad_camels.EPICS_handling.make_ioc.make_src_mk_string"><code class="docutils literal notranslate"><span class="pre">make_src_mk_string()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nomad_camels.EPICS_handling.make_ioc.update_addresses"><code class="docutils literal notranslate"><span class="pre">update_addresses()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.bluesky_handling.html">nomad_camels.bluesky_handling package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.commands.html">nomad_camels.commands package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.frontpanels.html">nomad_camels.frontpanels package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.gui.html">nomad_camels.gui package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.loop_steps.html">nomad_camels.loop_steps package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.main_classes.html">nomad_camels.main_classes package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.manual_controls.html">nomad_camels.manual_controls package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.tests.html">nomad_camels.tests package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.tools.html">nomad_camels.tools package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.ui_widgets.html">nomad_camels.ui_widgets package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="nomad_camels.utility.html">nomad_camels.utility package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-nomad_camels.EPICS_handling">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#module-nomad_camels.CAMELS_start">nomad_camels.CAMELS_start module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#module-nomad_camels.MainApp_v2">nomad_camels.MainApp_v2 module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nomad_camels.html#module-nomad_camels">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.bluesky_handling.html">nomad_camels.bluesky_handling package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.commands.html">nomad_camels.commands package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.frontpanels.html">nomad_camels.frontpanels package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.gui.html">nomad_camels.gui package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.loop_steps.html">nomad_camels.loop_steps package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.main_classes.html">nomad_camels.main_classes package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.manual_controls.html">nomad_camels.manual_controls package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.tests.html">nomad_camels.tests package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.tools.html">nomad_camels.tools package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.ui_widgets.html">nomad_camels.ui_widgets package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nomad_camels.utility.html">nomad_camels.utility package</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="nomad_camels.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nomad_camels.html#module-nomad_camels.CAMELS_start">nomad_camels.CAMELS_start module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nomad_camels.html#module-nomad_camels.MainApp_v2">nomad_camels.MainApp_v2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nomad_camels.html#module-nomad_camels">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/FAU-LAP/NOMAD-CAMELS">Find us on GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nomad-lab.eu/nomad-lab/">NOMAD Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.fairmat-nfdi.eu/fairmat">FAIRmat Website</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imprint</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.lap.physik.nat.fau.de/impressum/">Imprint/Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_privacy.html">Data Privacy</a></li>
 </ul>
 
         </div>
@@ -96,8 +117,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">nomad_camels</a></li>
-          <li class="breadcrumb-item"><a href="nomad_camels.html">nomad_camels package</a></li>
+          <li class="breadcrumb-item"><a href="nomad_camels.html">nomad_camels</a></li>
       <li class="breadcrumb-item active">nomad_camels.EPICS_handling package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/nomad_camels.EPICS_handling.rst.txt" rel="nofollow"> View page source</a>
@@ -226,20 +246,24 @@ necessary lines for the given device.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="nomad_camels.html" class="btn btn-neutral float-left" title="nomad_camels package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nomad_camels.html" class="btn btn-neutral float-left" title="nomad_camels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="nomad_camels.bluesky_handling.html" class="btn btn-neutral float-right" title="nomad_camels.bluesky_handling package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, jl.</p>
+    <p>&#169; Copyright 2021, FAIRmat.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+  
+<br><br>
+<a href="https://www.lap.physik.nat.fau.de/impressum/">Imprint</a><br>
+<a href="data_privacy.html">Data privacy statement</a>
+
 
 </footer>
         </div>

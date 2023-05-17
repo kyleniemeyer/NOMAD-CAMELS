@@ -43,7 +43,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
@@ -64,7 +64,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#create-steps">3.1. Create Steps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#create-variables">3.2. Create Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-channels-using-variables">3.3. Set Channels (using variables)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">3.4. Read Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">3.4. Read Channels</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-sweep-protocol">3.5. Run Sweep Protocol</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sweep-data">3.6. Sweep Data</a></li>
 </ul>
@@ -84,7 +84,23 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../users_guide.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instruments/instruments.html">Instruments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programmers_guide/programmers_guide.html">Programmer's Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../nomad_camels.html">nomad-camels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/FAU-LAP/NOMAD-CAMELS">Find us on GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nomad-lab.eu/nomad-lab/">NOMAD Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.fairmat-nfdi.eu/fairmat">FAIRmat Website</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imprint</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.lap.physik.nat.fau.de/impressum/">Imprint/Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_privacy.html">Data Privacy</a></li>
 </ul>
 
         </div>
@@ -113,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="setting-up-measurement-protocols">
-<h1>Setting Up Measurement Protocols<a class="headerlink" href="#setting-up-measurement-protocols" title="Permalink to this heading"></a></h1>
+<span id="protocols-top-link"></span><h1>Setting Up Measurement Protocols<a class="headerlink" href="#setting-up-measurement-protocols" title="Permalink to this heading"></a></h1>
 <p>Measurement protocols are the main way in which CAMELS performs measurements. It can be understood as something similar to a <code class="docutils literal notranslate"><span class="pre">measurement</span> <span class="pre">recipe</span></code> where a step for step guide is given to different instruments to perform a measurement procedure.</p>
 <p>A good example of such a measurement procedure is a temperature dependant current-voltage (IV) measurement. Here the temperature of a sample is set to a specific value with a PID controller and waits for the temperature to be stable. Then it performs an IV-sweep, so it sets a voltage and measures the accompanying current for a given range of voltage values (often something like 100 points between -1 V and +1V).<br />
 The temperature set-points are also set to values in a given range (for example from 295K to 320K in 25 steps).<br />
@@ -143,7 +159,7 @@ Depending on the exact implementation of the instruments channels they are eithe
 <p>Below you can see the readable and the settable channels of the <code class="docutils literal notranslate"><span class="pre">demo_device</span></code>.</p>
 <a class="reference internal image-reference" href="../../_images/img_13.png"><img alt="../../_images/img_13.png" src="../../_images/img_13.png" style="width: 53%;" /></a>
 <a class="reference internal image-reference" href="../../_images/img_14.png"><img alt="../../_images/img_14.png" src="../../_images/img_14.png" style="width: 46%;" /></a>
-<p><a class="reference internal" href="#setting-up-measurement-protocols"><span class="xref myst">⇧ Back to the top ⇧</span></a></p>
+<p><a class="reference internal" href="#protocols-top-link"><span class="std std-ref">⇧ Back to the top ⇧</span></a></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -197,12 +213,12 @@ This should build the protocol (converts your recipe to a python script that use
 <p>This creates a HDF5 file in the location specified by the data saving location set in <code class="docutils literal notranslate"><span class="pre">Settings</span></code> and the user and sample name. This file contains all the read data and all the metadata known to CAMELS. With a simple HDF5 viewer like <a class="reference external" href="https://h5web.panosc.eu/h5wasm">H5web</a> you can easily read and display the data.<br />
 <img alt="img_26.png" src="../../_images/img_26.png" /><br />
 We can see that the <code class="docutils literal notranslate"><span class="pre">motorX</span></code> was set correctly to a value of 4.</p>
-<p><a class="reference internal" href="#setting-up-measurement-protocols"><span class="xref myst">⇧ Back to the top ⇧</span></a></p>
-</section>
-</section>
+<p><a class="reference internal" href="#protocols-top-link"><span class="std std-ref">⇧ Back to the top ⇧</span></a></p>
 <hr class="docutils" />
+</section>
+</section>
 <section id="sweeping-using-a-for-loop-step">
-<h2>3. Sweeping using a <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">loop</span></code> step<a class="headerlink" href="#sweeping-using-a-for-loop-step" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>3. Sweeping using a <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">loop</span></code> step<a class="headerlink" href="#sweeping-using-a-for-loop-step" title="Permalink to this heading"></a></h2>
 <p>Start by creating a new Protocol by clicking the large ➕ symbol next to <code class="docutils literal notranslate"><span class="pre">Measurement</span> <span class="pre">Protocols</span></code>in the main window.</p>
 <section id="create-steps">
 <h3>3.1. Create Steps<a class="headerlink" href="#create-steps" title="Permalink to this heading"></a></h3>
@@ -224,7 +240,7 @@ We can see that the <code class="docutils literal notranslate"><span class="pre"
 <section id="set-channels-using-variables">
 <h3>3.3. Set Channels (using variables)<a class="headerlink" href="#set-channels-using-variables" title="Permalink to this heading"></a></h3>
 <p>Start by setting the start, stop and number of points of the <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">Loop</span></code>. To do this either  type the number you want into the field or you can use the variables created above to set these parameters. To use the variables  right-click the field and select <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Variable</span></code> and then <code class="docutils literal notranslate"><span class="pre">stop</span></code>. Like this for example:
-<img alt="img_31.png" src="../../_images/img_31.png" /></p>
+<img alt="img_31.png" src="../../_images/img_311.png" /></p>
 <p>When you entered the three relevant parameters you should see a list of points appear on the right side showing you which value the points you created will have.<br />
 <img alt="img_32.png" src="../../_images/img_32.png" /></p>
 <p>Now go to <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">Channels</span></code> and set the three motor channels of the <code class="docutils literal notranslate"><span class="pre">demo_device</span></code> to the value you want. For demonstration purposes we will set each channel to a function that uses either <code class="docutils literal notranslate"><span class="pre">For_Loop_Count</span></code> or <code class="docutils literal notranslate"><span class="pre">For_Loop_Value</span></code>. Where <code class="docutils literal notranslate"><span class="pre">Count</span></code> is the number of iteration of the for-loop; here for example it starts with <code class="docutils literal notranslate"><span class="pre">1</span></code> goes to <code class="docutils literal notranslate"><span class="pre">11</span></code>, increasing by <code class="docutils literal notranslate"><span class="pre">1</span></code> for each iteration. This can be used to count and keep track of your iterations. <code class="docutils literal notranslate"><span class="pre">Value</span></code> is the value belonging to the iteration count; here it would go from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> in steps of <code class="docutils literal notranslate"><span class="pre">0.2</span></code>.   The name of these two variables changes if you rename the <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">loop</span></code> step to <code class="docutils literal notranslate"><span class="pre">&lt;name_for_loop&gt;_Count</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;name_for_loop&gt;_Value</span></code>.
@@ -237,8 +253,8 @@ We set</p>
 </ul>
 <p>to demonstrate both of the variables and the use of mathematical operations (here <code class="docutils literal notranslate"><span class="pre">+</span></code>) in value fields.</p>
 </section>
-<section id="id1">
-<h3>3.4. Read Channels<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<section id="id2">
+<h3>3.4. Read Channels<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <p>Now set which channels should be read each time the loop is iterated over. If you like you can  select <code class="docutils literal notranslate"><span class="pre">Read</span> <span class="pre">All</span></code> at the top to read all available channels. You could of course select individual channels if you want read fewer. Here we are only interested in the motor channels, so we will only read these.
 <img alt="img_34.png" src="../../_images/img_34.png" /></p>
 </section>
@@ -256,26 +272,26 @@ You can already see the eleven iterations the loop makes from the console window
 <a class="reference internal image-reference" href="../../_images/img_37.png"><img alt="../../_images/img_37.png" src="../../_images/img_37.png" style="width: 22%;" /></a>
 <a class="reference internal image-reference" href="../../_images/img_38.png"><img alt="../../_images/img_38.png" src="../../_images/img_38.png" style="width: 21.3%;" /></a>
 <p>We can see that the mathematical operation of adding <code class="docutils literal notranslate"><span class="pre">Count</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code> for <code class="docutils literal notranslate"><span class="pre">motorZ</span></code> worked.</p>
-<p><a class="reference internal" href="#setting-up-measurement-protocols"><span class="xref myst">⇧ Back to the top ⇧</span></a></p>
+<p><a class="reference internal" href="#protocols-top-link"><span class="std std-ref">⇧ Back to the top ⇧</span></a></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="using-the-simple-sweep-functionality">
 <h2>4. Using the <code class="docutils literal notranslate"><span class="pre">Simple</span> <span class="pre">Sweep</span></code> functionality<a class="headerlink" href="#using-the-simple-sweep-functionality" title="Permalink to this heading"></a></h2>
-<p>If you want to sweep and set one channel (e.g. voltage) and read any number of other channels (e.g. current and temperature) you can either use a for-loop as described <a class="reference internal" href="#3-sweeping-using-a-for-loop-step"><span class="xref myst">above</span></a> or you can use the <em>Simple Sweep</em> functionality which is a ‘cleaner’ implementation of such a sweep.</p>
+<p>If you want to sweep and set one channel (e.g. voltage) and read any number of other channels (e.g. current and temperature) you can either use a for-loop as described <a class="reference internal" href="#sweeping-using-a-for-loop-step"><span class="std std-ref">above</span></a> or you can use the <em>Simple Sweep</em> functionality which is a ‘cleaner’ implementation of such a sweep.</p>
 <section id="create-step">
 <h3>4.1. Create Step<a class="headerlink" href="#create-step" title="Permalink to this heading"></a></h3>
 <p>Start by creating a new Protocol by clicking the large ➕ symbol next to <code class="docutils literal notranslate"><span class="pre">Measurement</span> <span class="pre">Protocols</span></code>in the main window. Add a <code class="docutils literal notranslate"><span class="pre">Simple</span> <span class="pre">Sweep</span></code> step into teh sequence.</p>
 </section>
 <section id="customize-simple-sweep">
 <h3>4.2. Customize Simple Sweep<a class="headerlink" href="#customize-simple-sweep" title="Permalink to this heading"></a></h3>
-<p>You can now configure the <code class="docutils literal notranslate"><span class="pre">Simple</span> <span class="pre">Sweep</span></code>. This is quite similar to configuring the <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">loop</span></code> step <a class="reference internal" href="#3-sweeping-using-a-for-loopstep"><span class="xref myst">above</span></a>. But you musts first configure the Sweep Channel, so the channel that should be changed and set. We will use the <code class="docutils literal notranslate"><span class="pre">motorX</span></code> channel for this example.
+<p>You can now configure the <code class="docutils literal notranslate"><span class="pre">Simple</span> <span class="pre">Sweep</span></code>. This is quite similar to configuring the <code class="docutils literal notranslate"><span class="pre">For</span> <span class="pre">loop</span></code> step <a class="reference internal" href="#sweeping-using-a-for-loop-step"><span class="std std-ref">above</span></a>. But you musts first configure the Sweep Channel, so the channel that should be changed and set. We will use the <code class="docutils literal notranslate"><span class="pre">motorX</span></code> channel for this example.
 <img alt="img_39.png" src="../../_images/img_39.png" /><br />
 <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Output</span></code> configures in which Bluesky stream the sweep is run. <code class="docutils literal notranslate"><span class="pre">sub-stream</span></code> should be fine for most cases.<br />
 Select the <code class="docutils literal notranslate"><span class="pre">Loop-Type</span></code> and <code class="docutils literal notranslate"><span class="pre">Sweep</span> <span class="pre">mode</span></code> you want.</p>
 <a class="reference internal image-reference" href="../../_images/img_40.png"><img alt="../../_images/img_40.png" src="../../_images/img_40.png" style="width: 30%;" /></a>
 <a class="reference internal image-reference" href="../../_images/img_411.png"><img alt="../../_images/img_411.png" src="../../_images/img_411.png" style="width: 34.8%;" /></a>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">Start</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code> and <code class="docutils literal notranslate"><span class="pre">points</span></code> parameters. For this we can again use variables as done <a class="reference internal" href="#3-sweeping-using-a-for-loopstep"><span class="xref myst">above</span></a>. Then select which channels you want to read. We will only select the <code class="docutils literal notranslate"><span class="pre">motorX</span></code> channel. As this is the only channel that is changed.</p>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">Start</span></code>, <code class="docutils literal notranslate"><span class="pre">Stop</span></code> and <code class="docutils literal notranslate"><span class="pre">points</span></code> parameters. For this we can again use variables as done <a class="reference internal" href="#sweeping-using-a-for-loop-step"><span class="std std-ref">above</span></a>. Then select which channels you want to read. We will only select the <code class="docutils literal notranslate"><span class="pre">motorX</span></code> channel. As this is the only channel that is changed.</p>
 <a class="reference internal image-reference" href="../../_images/img_42.png"><img alt="../../_images/img_42.png" src="../../_images/img_42.png" style="width: 70%;" /></a>
 </section>
 <section id="run-simple-sweep">
@@ -288,7 +304,7 @@ Select the <code class="docutils literal notranslate"><span class="pre">Loop-Typ
 <p>Now lets look at the data produced. The HDF5 file with the data is saved into the location specified by you. With a simple HDF5 viewer like <a class="reference external" href="https://h5web.panosc.eu/h5wasm">H5web</a> you can easily read and display the data.</p>
 <a class="reference internal image-reference" href="../../_images/img_44.png"><img alt="../../_images/img_44.png" src="../../_images/img_44.png" style="width: 75%;" /></a>
 <p>We can see that the set points of <code class="docutils literal notranslate"><span class="pre">motorX</span></code> are read successfully.</p>
-<p><a class="reference internal" href="#setting-up-measurement-protocols"><span class="xref myst">⇧ Back to the top ⇧</span></a></p>
+<p><a class="reference internal" href="#protocols-top-link"><span class="std std-ref">⇧ Back to the top ⇧</span></a></p>
 </section>
 </section>
 </section>
@@ -304,13 +320,17 @@ Select the <code class="docutils literal notranslate"><span class="pre">Loop-Typ
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, jl.</p>
+    <p>&#169; Copyright 2021, FAIRmat.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+  
+<br><br>
+<a href="https://www.lap.physik.nat.fau.de/impressum/">Imprint</a><br>
+<a href="data_privacy.html">Data privacy statement</a>
+
 
 </footer>
         </div>

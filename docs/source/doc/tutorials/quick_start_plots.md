@@ -1,3 +1,4 @@
+(plots_top_link)=
 # Setting Up Plots in Protocols
 You can display live-plots in the measurement protocols to have a better understanding of what is going on during the measurement. 
 ## 1. Configure Plots
@@ -27,4 +28,4 @@ If you then run the protocol the plot is displayed and updated live.
 > ![img_53.png](img_53.png)
 
 
-[&#8679; Back to the top &#8679;](#setting-up-plots-in-protocols)
+[&#8679; Back to the top &#8679;](plots_top_link)

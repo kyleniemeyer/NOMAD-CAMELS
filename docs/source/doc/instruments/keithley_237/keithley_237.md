@@ -55,16 +55,10 @@ Reads the `read_DC` channel.\
 ##### Resulting Data
 Example data from such a for-loop measurement. From the recorded instrument settings (`keithley_237_Source_Type` entry) it is clear what was measured.
 
-[comment]: <> (<details>)
-
-[comment]: <> (  <summary>Display example data</summary>)
 ```{image} img_3.png
 ```
 
-[comment]: <> (<img src="img_3.png"/>)
-
-[comment]: <> (</details>)
-
+(int_sweeps)=
 ### Using Internal Sweeps
 There are five different types of internal sweeps:
 1. Fixed Level (`setSweep_type = 0`)
@@ -81,15 +75,15 @@ Each type requires a different set of parameters from this list :\
 `level`, `points`, `pulses`, `start`, `step`, `stop`, `t_off` and `t_on`.
 
 #### Setting up the Sweep
-#### Sweep Parameters
+##### Sweep Parameters
 Before you start the sweep measurement you have to set the required parameters to the desired value in a _'Set Channels step'_. 
 
 E.g. for a linear stair sweep from `start=0` to `stop=1` with `step size=0.1`. `Bias delay` and `range` are set in the instrument config page.\
 &#9888; You **MUST set the sweep type** using the `keithley_237_setSweep_Type` channel:\
-Here we want the linear sweep so we set the value to `1` as this corresponds to the linear sweep (see list of 5 sweep types [above](#using-internal-sweeps))\
+Here we want the linear sweep so we set the value to `1` as this corresponds to the linear sweep (see list of 5 sweep types [above](int_sweeps))\
 ![img_4.png](img_4.png)
 
-#### Starting the Sweep
+##### Starting the Sweep
 
 Then you can start the measurement by setting the value of `keithley_237_start_sweep` to `1`
 ![img_5.png](img_5.png)
@@ -105,14 +99,6 @@ To read the measured data simply read the `read_sweep` channel:
 This produces the following data for a voltage sweep using a 15 k&#8486; resistor.
 ```{image} img_7.png
 ```
-
-[comment]: <> (<details>)
-
-[comment]: <> (  <summary>Display example data</summary>)
-
-[comment]: <> (<img src="img_7.png"/>)
-
-[comment]: <> (</details>)
 
 The first column in the data is the set value (in this case the voltage) while the second column is the measured value (current) for that voltage.
 The settings of the sweep can be read from the `protocol_overview` entry and the instrument settings.

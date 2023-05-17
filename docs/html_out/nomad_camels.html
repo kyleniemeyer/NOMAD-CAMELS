@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="nomad_camels.EPICS_handling package" href="nomad_camels.EPICS_handling.html" />
-    <link rel="prev" title="Keithley 237 - Source Measure Unit (SMU)" href="doc/instruments/keithley_237/keithley_237.html" /> 
+    <link rel="prev" title="Uploading a new NOMAD-CAMELS version to PyPI" href="doc/programmers_guide/pypi_upload.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,8 +50,9 @@
 <li class="toctree-l1"><a class="reference internal" href="doc/tutorials/quick_start.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/users_guide.html">User's Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc/instruments/instruments.html">Instruments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/programmers_guide/programmers_guide.html">Programmer's Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<p class="caption" role="heading"><span class="caption-text">Code Reference</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">nomad-camels</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
@@ -147,6 +148,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/FAU-LAP/NOMAD-CAMELS">Find us on GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nomad-lab.eu/nomad-lab/">NOMAD Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.fairmat-nfdi.eu/fairmat">FAIRmat Website</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imprint</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.lap.physik.nat.fau.de/impressum/">Imprint/Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_privacy.html">Data Privacy</a></li>
 </ul>
 
         </div>
@@ -1979,30 +1991,13 @@ If a backup is selected, the current preset is put into backup.</p>
 <p>Those may contain:
 - autosave: turn on / off autosave on closing the program.
 - dark_mode: turning dark-mode on / off.
-- number_format: the number format for display, can be either</p>
-<blockquote>
-<div><p>“mixed”, “plain” or “scientific”.</p>
-</div></blockquote>
-<ul class="simple">
-<li><dl class="simple">
-<dt>mixed_from: the exponent from where to switch to</dt><dd><p>scientific format, if number_format is “mixed”.</p>
-</dd>
-</dl>
-</li>
-<li><p>n_decimals: the number of displayed decimals of a number.</p></li>
-<li><dl class="simple">
-<dt>py_files_path: the path, where python files (e.g. protocols)</dt><dd><p>are created.</p>
-</dd>
-</dl>
-</li>
-<li><p>meas_files_path: the path, where measurement data is stored.</p></li>
-<li><dl class="simple">
-<dt>device_driver_path: the path, where NOMAD-CAMELS can find the</dt><dd><p>installed devices.</p>
-</dd>
-</dl>
-</li>
-<li><p>databroker_catalog_name: the name of the databroker catalog</p></li>
-</ul>
+- number_format: the number format for display, can be either “mixed”, “plain” or “scientific”.
+- mixed_from: the exponent from where to switch to scientific format, if number_format is “mixed”.
+- n_decimals: the number of displayed decimals of a number.
+- py_files_path: the path, where python files (e.g. protocols) are created.
+- meas_files_path: the path, where measurement data is stored.
+- device_driver_path: the path, where NOMAD-CAMELS can find the installed devices.
+- databroker_catalog_name: the name of the databroker catalog</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2278,20 +2273,24 @@ provided by the active devices.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="doc/instruments/keithley_237/keithley_237.html" class="btn btn-neutral float-left" title="Keithley 237 - Source Measure Unit (SMU)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="doc/programmers_guide/pypi_upload.html" class="btn btn-neutral float-left" title="Uploading a new NOMAD-CAMELS version to PyPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="nomad_camels.EPICS_handling.html" class="btn btn-neutral float-right" title="nomad_camels.EPICS_handling package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, jl.</p>
+    <p>&#169; Copyright 2021, FAIRmat.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+  
+<br><br>
+<a href="https://www.lap.physik.nat.fau.de/impressum/">Imprint</a><br>
+<a href="data_privacy.html">Data privacy statement</a>
+
 
 </footer>
         </div>

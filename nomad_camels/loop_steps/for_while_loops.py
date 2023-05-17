@@ -136,11 +136,9 @@ class For_Loop_Step(Loop_Step_Container):
     loop_type : str
         can be one of the following:
         - "start - stop" the loop goes from `min_val` to `max_val`
-        - "start - min - max - stop" or "start - max - min - stop" goes
-            from start over min/max, max/min to stop
+        - "start - min - max - stop" or "start - max - min - stop" goes from start over min/max, max/min to stop
         - "Value-List" the loop uses the values inside `val_list`
-        - "Text-File" the loop uses the values of a single-column text
-            file given by `file_path`
+        - "Text-File" the loop uses the values of a single-column text file given by `file_path`
     sweep_mode : str
         only relevant if not using "Value-List" or "Text-File" mode
         can be:

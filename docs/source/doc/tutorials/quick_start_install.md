@@ -1,3 +1,4 @@
+(top-link)=
 # Installation and Configuration of a Demo Instrument
 This page should help you learn how to use CAMELS, especially if this is your first time using CAMELS. It shows you how to add (install) a new instrument (`demo device`) to CAMELS, how to configure it, and how to set and measure the `demo device`.
 ## 1. Installation of Demo Device
@@ -82,6 +83,4 @@ After adding at least one instrument to CAMELS you now have two ways to control 
    Manually change and control individual channels. This is useful for controlling stages without having to create a protocol. How to use this functionality is explained in more detail [here](https://fau-lap.github.io/NOMAD-CAMELS/docs/Tutorials/quick_start/quick_start_manual_control.html).
    ![img_8.png](img_8.png)
 
-[comment]: <> (Continue to the next page to learn how to use the instrument you just implemented in a measurement protocol.)
-
-[&#8679; Back to the top &#8679;](#installation-and-configuration-of-a-demo-instrument)
+[&#8679; Back to the top &#8679;](top-link)

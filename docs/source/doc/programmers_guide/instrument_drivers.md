@@ -12,7 +12,7 @@ nomad_camels_driver_<parent_driver_name> (contains the actual device communicati
 and giving the path to the parent folder in the CAMELS settings.
 
 CAMELS then searches the given path for folder starting with `nomad_camels_driver_` and extracts the device name from the text following this.\
-For more details on how the .py and ophyd.py files should look like you can go to the code examples in [Section 1.2.](#12-python-files)
+For more details on how the .py and ophyd.py files should look like you can go to the code examples in [Section 1.2.](python_files)
 
 ### File Templates
 You can find templates for a new instrument driver [here](https://github.com/FAU-LAP/CAMELS_drivers/tree/main/empty_instrument_driver).
@@ -69,7 +69,7 @@ The `pyproject.toml` file contains most of the relevant information concerning t
 <details>
   <summary>Code example: pyproject.toml file for the  Keithley 237</summary>
 
-{% highlight toml %}
+```toml
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
@@ -94,12 +94,13 @@ dependencies = [
 [project.urls]
 "GitHub Page" = "https://github.com/FAU-LAP/NOMAD-CAMELS"
 "Documentation" = "https://fau-lap.github.io/NOMAD-CAMELS/"
-{% endhighlight %}
+```
 
 </details>
 
 ---
 
+(python_files)=
 ### 2. Python files
 The `<parent_driver_name>.py` file contains information about the possible instrument configurations and settings. This can be for example the current compliance of a voltage source or the integration time of a digital multimeter.
 #### 2.2.1 Simple Device Configurations
@@ -111,7 +112,7 @@ The `<parent_driver_name>.py` file contains information about the possible instr
 <details>
   <summary>Code example: Use the auto-generated UI for instrument settings (for Keithley 237)</summary>
 
-{% highlight python %}
+```python
 from nomad_camels_driver_keithley_237.keithley_237_ophyd import Keithley_237 # Change this line!
 from nomad_camels.main_classes import device_class
 
@@ -133,10 +134,10 @@ class subclass(device_class.Device):
         self.config['Source_Type'] = "Voltage"
         self.config['Sweep_Hysteresis'] = False
 
-# This adds a simple GUI of the configuration settings that you add below. 
-# This way you do NOT need to write our own GUI for the instrument settings.
-# This can be used for simple instruments with only a few settings.
-# For more complicated instruments (with e.g. multiple channels) it might be necessary to write a more advanced GUI
+"""This adds a simple GUI of the configuration settings that you add below. 
+This way you do NOT need to write our own GUI for the instrument settings.
+This can be used for simple instruments with only a few settings.
+For more complicated instruments (with e.g. multiple channels) it might be necessary to write a more advanced GUI"""
 class subclass_config(device_class.Simple_Config):
     def __init__(self, parent=None, data='', settings_dict=None,
                  config_dict=None, ioc_dict=None, additional_info=None):
@@ -164,7 +165,7 @@ class subclass_config(device_class.Simple_Config):
                          config_dict, ioc_dict, additional_info, comboBoxes=comboBoxes, labels=labels)
         self.comboBox_connection_type.addItem('Local VISA')
         self.load_settings()
-{% endhighlight %}
+```
 
 </details>
 
@@ -178,7 +179,8 @@ If the instrument is more complex CAMELS can not auto generate the UI anymore. H
 <details>
   <summary>Code example: Use your own UI file to create settings for your instrument (for Andor Shamrock spectrograph)</summary>
 
-{% highlight python %}
+
+```python
 from CAMELS.main_classes import device_class
 from .andor_shamrock_500_config import Ui_andor_shamrock500_config
 from .andor_shamrock_500_ophyd import Andor_Shamrock_500
@@ -216,7 +218,7 @@ class subclass_config(device_class.Device_Config):
             self.config_dict[f'{key}1'] = val
         return super().get_config()
 
-# This inherits from your UI and is used above to create the tab widget with all the settings you implemented.
+"""This inherits from your UI and is used above to create the tab widget with all the settings you implemented."""
 class subclass_config_sub(device_class.Device_Config_Sub, Ui_andor_shamrock500_config):
     def __init__(self, config_dict=None, parent=None, settings_dict=None):
         super().__init__(parent=parent, config_dict=config_dict,
@@ -246,7 +248,7 @@ class subclass_config_sub(device_class.Device_Config_Sub, Ui_andor_shamrock500_c
         self.config_dict['input_slit_size'] = self.input_slit_size.value()
         self.config_dict['output_slit_size'] = self.output_slit_size.value()
         return super().get_config()
-{% endhighlight %}
+```
 
 </details>
 
@@ -256,13 +258,13 @@ Here is a more complex example which creates settings for two channels of a sing
 <details>
   <summary>Code example: Two separate channels (for Keysight 2912)</summary>
 
-{% highlight python %}
+```python
 from nomad_camels.main_classes import device_class
 from keysight_b2912.keysight_b2912_channel_config import Ui_B2912_channel # You need to import the created UI file
 from keysight_b2912.keysight_b2912_ophyd import Keysight_B2912 # Import the actual device communication
 from PySide6.QtWidgets import QTabWidget
 
-# Default settings of the instrument
+"""Default settings of the instrument"""
 default_settings = {'source': 'Voltage',
                     'source_range': '2E-1 V',
                     'range_lower_lim': '2E-1 V',
@@ -286,7 +288,7 @@ default_settings = {'source': 'Voltage',
                     'current_compliance': 2,
                     'NPLC': 1}
 
-# Similar to the simple device
+"""Similar to the simple device"""
 class subclass(device_class.Device):
     def __init__(self, **kwargs):
         super().__init__(name='keysight_b2912', virtual=False, tags=['SMU', 'voltage', 'current', 'resistance'], directory='keysight_b2912', ophyd_device=Keysight_B2912, ophyd_class_name='Keysight_B2912', **kwargs)
@@ -326,7 +328,7 @@ class subclass_config(device_class.Device_Config):
             self.config_dict[f'{key}2'] = val
         return super().get_config()
 
-# This inherits from the UI class you wrote for the UI config settings of the instrument
+"""This inherits from the UI class you wrote for the UI config settings of the instrument"""
 class subclass_config_sub(device_class.Device_Config_Sub, Ui_B2912_channel):
     def __init__(self, config_dict=None, parent=None, settings_dict=None):
         super().__init__(parent=parent, config_dict=config_dict,
@@ -460,7 +462,8 @@ class subclass_config_sub(device_class.Device_Config_Sub, Ui_B2912_channel):
         self.config_dict['voltage_compliance'] = float(self.lineEdit_voltage_compliance.text())
         self.config_dict['NPLC'] = float(self.lineEdit_NPLC.text())
         return super().get_config()
-{% endhighlight %}
+
+```
 
 </details>
 

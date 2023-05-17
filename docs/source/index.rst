@@ -1,7 +1,7 @@
 .. image:: assets/camels-horizontal.svg
 
 CAMELS - Configurable Application for Measurements, Experiments and Laboratory Systems
-====================
+======================================================================================
 
 CAMELS is a configurable measurement software, targeted towards the requirements of experimental solid-state physics. Here many experiments utilize a multitude of measurement devices used in dynamically changing setups. CAMELS will allow to define instrument control and measurement protocols using a graphical user interface (GUI). This provides a low entry threshold enabling the creation of new measurement protocols without programming knowledge or a deeper understanding of device communication.
 
@@ -20,21 +20,26 @@ https://github.com/FAU-LAP/CAMELS
    Tutorial <doc/tutorials/quick_start.md>
    User's Guide <doc/users_guide.md>
    Instruments <doc/instruments/instruments.md>
+   Programmer's Guide <doc/programmers_guide/programmers_guide.md>
 
 .. toctree::
    :maxdepth: 2
-   :caption: Reference
+   :caption: Code Reference
 
    nomad-camels <nomad_camels.rst>
    genindex
 
 
+.. toctree::
+   :caption: Links
 
+   Find us on GitHub <https://github.com/FAU-LAP/NOMAD-CAMELS>
+   NOMAD Website <https://nomad-lab.eu/nomad-lab/>
+   FAIRmat Website <https://www.fairmat-nfdi.eu/fairmat>
 
-------------------
-Indices and tables
-------------------
+.. toctree::
+   :caption: Imprint
+   :maxdepth: 1
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   Imprint/Contact <https://www.lap.physik.nat.fau.de/impressum/>
+   Data Privacy <data_privacy.md>

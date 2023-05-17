@@ -1,3 +1,4 @@
+(protocols_top_link)=
 # Setting Up Measurement Protocols
 Measurement protocols are the main way in which CAMELS performs measurements. It can be understood as something similar to a `measurement recipe` where a step for step guide is given to different instruments to perform a measurement procedure.
 
@@ -48,7 +49,7 @@ Below you can see the readable and the settable channels of the `demo_device`.
 :width: 46%
 ```
 
-[&#8679; Back to the top &#8679;](#setting-up-measurement-protocols)
+[&#8679; Back to the top &#8679;](protocols_top_link)
 
 ---
 
@@ -111,10 +112,11 @@ This creates a HDF5 file in the location specified by the data saving location s
 ![img_26.png](img_26.png)\
 We can see that the `motorX` was set correctly to a value of 4.
 
-[&#8679; Back to the top &#8679;](#setting-up-measurement-protocols)
+[&#8679; Back to the top &#8679;](protocols_top_link)
 
 ---
 
+(sweeping-using-a-for-loop-step)=
 ## 3. Sweeping using a `For loop` step
 Start by creating a new Protocol by clicking the large ➕ symbol next to `Measurement Protocols`in the main window.
 ### 3.1. Create Steps
@@ -174,17 +176,17 @@ Here are the other two motor channels
 
 We can see that the mathematical operation of adding `Count` and `Value` for `motorZ` worked.
 
-[&#8679; Back to the top &#8679;](#setting-up-measurement-protocols)
+[&#8679; Back to the top &#8679;](protocols_top_link)
 
 ---
 
 ## 4. Using the `Simple Sweep` functionality
-If you want to sweep and set one channel (e.g. voltage) and read any number of other channels (e.g. current and temperature) you can either use a for-loop as described [above](#3-sweeping-using-a-for-loop-step) or you can use the _Simple Sweep_ functionality which is a 'cleaner' implementation of such a sweep.
+If you want to sweep and set one channel (e.g. voltage) and read any number of other channels (e.g. current and temperature) you can either use a for-loop as described [above](sweeping-using-a-for-loop-step) or you can use the _Simple Sweep_ functionality which is a 'cleaner' implementation of such a sweep.
 
 ### 4.1. Create Step
 Start by creating a new Protocol by clicking the large ➕ symbol next to `Measurement Protocols`in the main window. Add a `Simple Sweep` step into teh sequence.
 ### 4.2. Customize Simple Sweep
-You can now configure the `Simple Sweep`. This is quite similar to configuring the `For loop` step [above](#3-sweeping-using-a-for-loopstep). But you musts first configure the Sweep Channel, so the channel that should be changed and set. We will use the `motorX` channel for this example.
+You can now configure the `Simple Sweep`. This is quite similar to configuring the `For loop` step [above](sweeping-using-a-for-loop-step). But you musts first configure the Sweep Channel, so the channel that should be changed and set. We will use the `motorX` channel for this example.
 ![img_39.png](img_39.png)\
 `Data Output` configures in which Bluesky stream the sweep is run. `sub-stream` should be fine for most cases.\
 Select the `Loop-Type` and `Sweep mode` you want.
@@ -195,7 +197,7 @@ Select the `Loop-Type` and `Sweep mode` you want.
 :width: 34.8%
 ```
 
-Set the `Start`, `Stop` and `points` parameters. For this we can again use variables as done [above](#3-sweeping-using-a-for-loopstep). Then select which channels you want to read. We will only select the `motorX` channel. As this is the only channel that is changed.
+Set the `Start`, `Stop` and `points` parameters. For this we can again use variables as done [above](sweeping-using-a-for-loop-step). Then select which channels you want to read. We will only select the `motorX` channel. As this is the only channel that is changed.
 ```{image} img_42.png
 :width: 70%
 ```
@@ -213,4 +215,4 @@ Now lets look at the data produced. The HDF5 file with the data is saved into th
 We can see that the set points of `motorX` are read successfully.
 
 
-[&#8679; Back to the top &#8679;](#setting-up-measurement-protocols)
+[&#8679; Back to the top &#8679;](protocols_top_link)
