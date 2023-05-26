@@ -5,11 +5,13 @@ on:
       - development
       - main
       - testing
+      - test_development
   pull_request:
     branches:
       - development
       - main
       - testing
+      - test_development
 
 jobs:
   windows_test:
